@@ -1,0 +1,70 @@
+.Proj {
+    position: relative;
+    top: 900px;
+}
+
+.Proj > h2 {
+    text-align: center;
+    color: rgba(56, 86, 255, 1);
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.Proj > p {
+    text-align: center;
+    color: rgba(126, 145, 255, 1);
+    font-size: 16px;
+    font-weight: bolder;
+    position: relative;
+    bottom: 20px;
+}
+
+.ProjBox {
+    width: 1260px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.Proj > button {
+    background-color: rgba(172, 184, 255, 1);
+    border: none;
+    height: 40px;
+    width: 200px;
+    color: rgba(32, 44, 110, 1);
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 20px;
+    position: relative;
+    left: 1040px;
+}
+
+@media(max-width: 768px) {
+    .Proj {
+        top: 1000px;
+    }
+    
+    .Proj > h2 {
+        font-size: 25px;
+    }
+    
+    .Proj > p {
+        font-size: 14px;
+    }
+    
+    .ProjBox {
+        position: relative;
+        top: -15px;
+        width: 400px;
+    }
+    
+    .Proj > button {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        left: 0px;
+    }
+    
+}
