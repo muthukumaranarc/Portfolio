@@ -4,7 +4,6 @@ import Head from "./head";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './main.css'
-import Head from './head'
 import Profile from './Profile'
 import Skills from './Skills'
 import Journey from './Journey'
