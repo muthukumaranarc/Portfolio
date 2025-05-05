@@ -1,0 +1,115 @@
+.foot{
+    height: 250px;
+    max-width: 2000px;
+    position: relative;
+    top: 1000px;
+    background-image: url('./assets/footBackgrount.png');
+    background-size: cover;
+    align-items: center;
+}
+
+.footNav {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 425px;
+    /* border: 2px solid red; */
+    top: 50px;
+}
+
+.footNav > a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.thaink {
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    top: 85px;
+    width: 380px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contact {
+    width: 450px;
+    position: relative;
+    margin: 0 auto;
+    top: 70px;
+}
+
+.contact > button {
+    height: 40px;
+    width: 40px;
+    margin: 15px;
+}
+
+.mail {
+    background-image: url('./assets/Gmail.png');
+    background-size: cover;
+    align-items: center;
+}
+.linked {
+    background-image: url('./assets/LinkedIn.png');
+    background-size: cover;
+    align-items: center;
+}
+.insta {
+    background-image: url('./assets/Instagram.png');
+    background-size: cover;
+    align-items: center;
+}
+.whats {
+    background-image: url('./assets/WhhatsApp.png');
+    background-size: cover;
+    align-items: center;
+}
+.call {
+    background-image: url('./assets/Call.png'); 
+    background-size: cover;
+    align-items: center;
+}
+.Git {
+    background-image: url('./assets/contGit.png');
+    background-size: cover;
+    align-items: center;
+}
+
+@media(max-width: 768px){
+    .foot{
+        height: 200px;
+        max-width: 800px;
+        top: 1100px;
+    }
+    
+    .footNav {
+        width: 365px;
+        top: 50px;
+    }
+    
+    .footNav > a {
+        padding: 10px;
+        font-size: 15px;
+    }
+    
+    .thaink {
+        font-size: 13px;
+        top: 65px;
+        width: 350px;
+    }
+    
+    .contact {
+        width: 300px;
+        top: 60px;
+    }
+    
+    .contact > button {
+        height: 30px;
+        width: 30px;
+        margin: 10px;
+    }
+}
