@@ -20,7 +20,6 @@
     left: 130px;
     width: 400px;
     text-align: center;
-    /* border: 2px solid red; */
 }
 
 .leet_rank {
@@ -44,6 +43,10 @@
     color: white;
     font-size: 20px;
     font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media(max-width: 768px) {

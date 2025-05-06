@@ -39,15 +39,18 @@ input {
     color: rgba(126, 145, 255, 0.83);
     font-size: 17px;
     font-weight: bold;
+    padding-left: 20px;
 }
 
 input[type="text"] {
     padding-left: 20px;
-  }
+}
   
+input[type="number"] {
+      padding-left: 20px;
+}
 
 ::placeholder {
-    padding: 30px;
     font-size: 17px;
     font-weight: bold;
     color: rgba(126, 145, 255, 0.83);
@@ -69,7 +72,7 @@ button{
     color: gray;
 }
 
-.feed > .submit {
+.submit {
     background-color: rgba(172, 184, 255, 1);
     border: none;
     height: 40px;
@@ -111,7 +114,7 @@ button{
         margin-bottom: 20px;
     }
     
-    .feed > .submit {
+    .submit {
         position: relative;
         left: 0px;
         top: 15px;

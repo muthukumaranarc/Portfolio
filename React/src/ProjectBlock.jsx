@@ -9,6 +9,7 @@ function ProjectBlock({title, year, frount, back, def}) {
             <p className='frountLan'>Frountend: {frount}</p>
             <p className='backLan'>Backend: {back}</p>
             <p className='def'>{def}</p>
+            <a>View</a>
         </div>
     );
 }

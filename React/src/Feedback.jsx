@@ -1,74 +1,100 @@
 import { useState } from 'react';
-import './FeedBack.css'
+import './FeedBack.css';
 
 function Feedback() {
-    const [num, setnum] = useState(false);
-    const [subBut, subButVal] = useState("Submit");
-    // subButVal("Submit");
-    
-    function handleSubmit() {
-        subButVal("Processing...");
-        
-        const data = {
-            name: document.getElementById("name").value,
-            experience: document.getElementById("exp").value,
-            roleInIT: document.getElementById("role").value,
-            email: document.getElementById("email").value,
-            feedback: document.getElementById("feed").value,
-            link: document.getElementById("link").value
+    const [formData, setFormData] = useState({
+        name: '',
+        experience: '',
+        roleInIT: '',
+        email: '',
+        feedback: '',
+        link: ''
+    });
+    const [rating, setRating] = useState(0);
+    const [subBut, setSubBut] = useState("Submit");
+    const [isDisabled, setIsDisabled] = useState(false);
+
+    const handleChange = (e) => {
+        if (isDisabled) return;
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsDisabled(true);
+        setSubBut("Processing...");
+
+        // Include the rating
+        const dataToSend = {
+            ...formData,
+            rating: rating
         };
-        
-    
+
+        console.log("Data Sent to Server:", dataToSend); // 👈 DEBUG: Confirm rating is added
+
         fetch("http://localhost:8080/mail/send", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(dataToSend)
         })
         .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response was not OK");
-            }
+            if (!response.ok) throw new Error("Network error");
             return response.json();
         })
-        .then(result => {
-            console.log("Success:", result);
-            subButVal("Submit");
+        .then(() => {
+            console.log(formData.rate);
             alert("Feedback submitted successfully!");
-            
-            document.getElementById("name").value = "";
-            document.getElementById("exp").value = "";
-            document.getElementById("role").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("feed").value = "";
-            document.getElementById("link").value = "";
+            setFormData({
+                name: '',
+                experience: '',
+                roleInIT: '',
+                email: '',
+                feedback: '',
+                link: ''
+            });
+            setRating(0);
         })
         .catch(error => {
-            console.error("Error:", error);
             alert("Error submitting feedback!");
+            console.error(error);
+        })
+        .finally(() => {
+            setSubBut("Submit");
+            setIsDisabled(false);
         });
-    }
-    
+    };
 
     return (
         <div className='feed'>
-            <h2>FeedBack Corner</h2>
+            <h2>Feedback Corner</h2>
             <p>Leave your Feedback</p>
-            <div className='inputBox'>
-                <input id="name" type='text' name='name' placeholder='Name'></input>
-                <input id="exp" type='text' name='name' placeholder='Experience' className='left'></input>
-                <input id="role" type='text' name='name' placeholder='Role in TI'></input>
-                <input id="email" type='text' name='name' placeholder='Email' className='left'></input>
-                <input id="feed" type='text' name='name' placeholder='How is my Portfolio'></input>
-                <input id="link" type='text' name='name' placeholder='Your Portfolio Link' className='left'></input>
-            </div>
-            <button onClick={() => setnum(1)} className={`${num >= 1 ? 'clicked' : 'notClicked'}`}>★</button>
-            <button onClick={() => setnum(2)} className={`${num >= 2 ? 'clicked' : 'notClicked'}`}>★</button>
-            <button onClick={() => setnum(3)} className={`${num >= 3 ? 'clicked' : 'notClicked'}`}>★</button>
-            <button onClick={() => setnum(4)} className={`${num >= 4 ? 'clicked' : 'notClicked'}`}>★</button>
-            <button onClick={() => setnum(5)} className={`${num >= 5 ? 'clicked' : 'notClicked'}`}>★</button>
-            <button className='submit' onClick={handleSubmit}>{subBut}</button>
+            <form onSubmit={handleSubmit}>
+                <div className='inputBox'>
+                    <input name="name" type="text" value={formData.name} onChange={handleChange} placeholder="Name" disabled={isDisabled} required />
+                    <input name="experience" type="number" value={formData.experience} onChange={handleChange} placeholder="Experience" className='left' disabled={isDisabled} />
+                    <input name="roleInIT" type="text" value={formData.roleInIT} onChange={handleChange} placeholder="Role in IT" disabled={isDisabled} />
+                    <input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="Email" className='left' disabled={isDisabled} required />
+                    <input name="feedback" type="text" value={formData.feedback} onChange={handleChange} placeholder="How is my Portfolio?" disabled={isDisabled} required />
+                    <input name="link" type="text" value={formData.link} onChange={handleChange} placeholder="Your Portfolio Link" className='left' disabled={isDisabled}/>
+                </div>
+
+                {[1, 2, 3, 4, 5].map((n) => (
+                    <button
+                        key={n}
+                        type="button"
+                        onClick={() => setRating(n)}
+                        value={formData.rate}
+                        className={ `${rating >= n ? 'clicked' : 'notClicked'}`}
+                        disabled={isDisabled}
+                    >
+                        ★
+                    </button>
+                ))}
+
+                <button type="submit" className='submit' disabled={isDisabled}>{subBut}</button>
+            </form>
         </div>
     );
 }

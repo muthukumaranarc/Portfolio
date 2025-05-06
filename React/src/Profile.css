@@ -57,6 +57,10 @@ body {
     color: white;
     font-size: 20px;
     font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .Prof_img {

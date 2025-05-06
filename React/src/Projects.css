@@ -28,18 +28,6 @@
     justify-content: center;
 }
 
-.Proj > button {
-    background-color: rgba(172, 184, 255, 1);
-    border: none;
-    height: 40px;
-    width: 200px;
-    color: rgba(32, 44, 110, 1);
-    font-weight: bolder;
-    font-size: 18px;
-    border-radius: 20px;
-    position: relative;
-    left: 1040px;
-}
 
 @media(max-width: 768px) {
     .Proj {
@@ -58,13 +46,6 @@
         position: relative;
         top: -15px;
         width: 400px;
-    }
-    
-    .Proj > button {
-        display: block;
-        position: relative;
-        margin: 0 auto;
-        left: 0px;
     }
     
 }
