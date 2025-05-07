@@ -69,7 +69,10 @@
     align-items: center;
     height: 30px;
     width: 100px;
-    font-size: 18px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(25, 40, 128);
     background-color: rgb(154, 163, 218);
     border-radius: 20px;
     position: relative;

@@ -86,6 +86,13 @@ button{
     bottom: 10px;
 }
 
+.adFeed {
+    height: 30px;
+    position: relative;
+    top: 920px;
+    /* border: 2px solid red; */
+}
+
 @media(max-width: 768px) {
     .feed {
         top: 1050px;

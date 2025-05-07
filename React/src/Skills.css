@@ -4,8 +4,14 @@
     height: 625px;
     margin: 0 auto;
     position: relative;
-    top: 550px;
+    top: 520px;
     border-radius: 20px;
+}
+.adSkill {
+    height: 30px;
+    position: relative;
+    top: 530px;
+    /* border: 2px solid red; */
 }
 
 .skill_tit {

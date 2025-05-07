@@ -28,6 +28,12 @@
     justify-content: center;
 }
 
+.adProj {
+    height: 30px;
+    position: relative;
+    top: 940px;
+    /* border: 2px solid red; */
+}
 
 @media(max-width: 768px) {
     .Proj {

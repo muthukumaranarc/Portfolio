@@ -2,11 +2,14 @@ import './Footer.css';
 // import background from './assets/footBackgrount.png';
 function Footer() {
     return (
+        <>
+        <div className='adFoot'><section id='contact'></section></div>
         <div className='foot'>
             <div className='footNav'>
             <a href="#home">Home</a>
             <a href="#skills">Skills</a>
             <a href="#visonary">Visionary</a>
+            <a href='#journey'>Journey</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
             </div>
@@ -41,6 +44,7 @@ function Footer() {
             <div className='thaink'>Thank you for spending your valuable time for me,
             I hope you may like my effort. </div>
         </div>
+        </>
     );
 }
 

@@ -67,6 +67,8 @@ function Feedback() {
     };
 
     return (
+        <>
+        <div className='adFeed'><section id='feedback'></section></div>
         <div className='feed'>
             <h2>Feedback Corner</h2>
             <p>Leave your Feedback</p>
@@ -96,6 +98,7 @@ function Feedback() {
                 <button type="submit" className='submit' disabled={isDisabled}>{subBut}</button>
             </form>
         </div>
+        </>
     );
 }
 

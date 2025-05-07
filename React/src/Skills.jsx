@@ -16,6 +16,8 @@ import SingleSkill from './SingleSkill'
 
 function Skills() {
     return(
+        <>
+        <div className='adSkill'><section id='skills'></section></div>
         <div className="skill_block">
             <div className='skill_tit'>SKILLS</div>
             <div className='skill_sub'>I can able to work with frontend and backend</div>
@@ -42,6 +44,7 @@ function Skills() {
                 <div className='gitHub'><img src={GitHub}/><p>GitHub</p></div>
             </div>
         </div>
+        </>
     )
 }
 

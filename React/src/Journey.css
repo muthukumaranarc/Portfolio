@@ -30,6 +30,13 @@
     display: none;
 }
 
+.adJour {
+    height: 30px;
+    position: relative;
+    top: 690px;
+    /* border: 2px solid red; */
+}
+
 @media(max-width: 768px) {
     .Jour{
         position: relative;

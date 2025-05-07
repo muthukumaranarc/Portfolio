@@ -12,7 +12,7 @@
     display: block;
     position: relative;
     margin: 0 auto;
-    width: 425px;
+    width: 510px;
     /* border: 2px solid red; */
     top: 50px;
 }
@@ -80,6 +80,13 @@
     background-image: url('./assets/contGit.png');
     background-size: cover;
     align-items: center;
+}
+
+.adFoot {
+    height: 0px;
+    position: relative;
+    top: 1000px;
+    /* border: 2px solid red; */
 }
 
 @media(max-width: 768px){

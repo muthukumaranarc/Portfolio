@@ -3,6 +3,8 @@ import map from './assets/map.png';
 
 function Visionary() {
     return(
+        <>
+        <div className='adVis'><section id='visonary'></section></div>
         <div className='Visi'>
             <h2>Visionary</h2>
             <p>Turning Challenges into Opportunities.</p>
@@ -20,6 +22,7 @@ function Visionary() {
                 <p>I'm passionate about learning and growing as a developer. Over time, I've built strong technical skills and a mindset focused on problem-solving. I believe my dedication, adaptability, and willingness to take on challenges will allow me to contribute positively to your team and deliver meaningful results.</p>
             </div>
         </div>
+        </>
     );
 }
 

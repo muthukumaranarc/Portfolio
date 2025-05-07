@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 20px;
+    top: 30px;
     left:30px;
 }
 
@@ -25,10 +25,9 @@ h1 {
 }
 
 .nav {
-    position: absolute;
-    top: 30px;
-    left: 500px;
-    width: 380px;
+    position: relative;
+    top: 28px;
+    width: 476px;
     margin: 0 auto;
 }
 
@@ -36,7 +35,7 @@ h1 {
     text-decoration: none;
     font-weight: 600;
     color: rgba(67, 95, 255, 1);
-    padding: 10px;
+    padding: 11px;
 }
 
 .Menu_But {
@@ -46,15 +45,57 @@ h1 {
     border: none;
     position: absolute;
     left: 1220px;
-    top: 20px;
+    top: 30px;
+    /* border: 2px solid red; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.menu {
+.menuImg {
     width: 20px;
     height: 20px;
 }
 
+.menu {
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: rgba(243, 245, 255, 0.521);
+    position: absolute;
+    left: 1160px;
+    top: 60px;
+    padding: 10px;
+    z-index: 2;   
+    /* text-align: center; */
+}
+
+.menu > p {
+    padding: 0px;
+    font-weight: bold;
+    color: rgb(182, 182, 182);
+}
+
+.menu > a {
+    text-decoration: none;
+    color: rgba(23, 36, 112, 0.979);
+    font-weight: bold;
+    padding: 5px;
+}
+
+.OnlyMobile {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .OnlyMobile {
+        display: block;
+    }
+
+    .OnlyDesktop {
+        display: none;
+    }
+
     .main {
         width:130px;
         top: 20px;
@@ -77,5 +118,19 @@ h1 {
     .Menu_But {
         left: 350px;
         top: 5px;
+    }
+
+    .menu {
+        display: grid;
+        /* height: 100px;
+        width: 50px; */
+        justify-content: center;
+        background-color: rgba(243, 245, 255, 0.521);
+        position: absolute;
+        left: 260px;
+        top: 50px;
+        padding: 20px;
+        z-index: 2;
+        
     }
 }

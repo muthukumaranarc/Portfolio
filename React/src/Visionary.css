@@ -70,6 +70,13 @@
     top: 110px;
 }
 
+.adVis {
+    height: 30px;
+    position: relative;
+    top: 730px;
+    /* border: 2px solid red; */
+}
+
 @media(max-width: 768px) {
     .Visi {
         top: 800px;
