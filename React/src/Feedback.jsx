@@ -32,7 +32,7 @@ function Feedback() {
 
         console.log("Data Sent to Server:", dataToSend); // 👈 DEBUG: Confirm rating is added
 
-        fetch("http://localhost:8080/mail/send", {
+        fetch("https://appsail-50026275712.development.catalystappsail.in/mail/send", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
