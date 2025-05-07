@@ -11,7 +11,6 @@ function Footer() {
             <a href="#visonary">Visionary</a>
             <a href='#journey'>Journey</a>
             <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
             </div>
             <div className='contact'>
                 <a

@@ -60,14 +60,12 @@ h1 {
 .menu {
     display: grid;
     justify-content: center;
-    /* align-items: center; */
     background-color: rgba(243, 245, 255, 0.521);
     position: absolute;
     left: 1160px;
-    top: 60px;
+    top: 70px;
     padding: 10px;
-    z-index: 2;   
-    /* text-align: center; */
+    z-index: 2;
 }
 
 .menu > p {
@@ -117,20 +115,11 @@ h1 {
     
     .Menu_But {
         left: 350px;
-        top: 5px;
+        top: 15px;
     }
 
     .menu {
-        display: grid;
-        /* height: 100px;
-        width: 50px; */
-        justify-content: center;
-        background-color: rgba(243, 245, 255, 0.521);
-        position: absolute;
-        left: 260px;
+        left: 300px;
         top: 50px;
-        padding: 20px;
-        z-index: 2;
-        
     }
 }

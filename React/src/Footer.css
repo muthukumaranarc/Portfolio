@@ -97,13 +97,13 @@
     }
     
     .footNav {
-        width: 365px;
+        width: 300px;
         top: 50px;
     }
     
     .footNav > a {
-        padding: 10px;
-        font-size: 15px;
+        padding: 5px;
+        font-size: 14px;
     }
     
     .thaink {

@@ -23,25 +23,25 @@ function Head(){
             <img src={menu} className='menuImg'/>
         </button>
 
-        {open && (
+        {/* {open && (
         <div className="menu  OnlyDesktop">
             <a href="#feedback">Feedback</a>
             <a href="mailto:muthukumaranarc00@gmail.com">Email</a>
             <a href="https://drive.google.com/file/d/1VNBXIq6xn_nQNVrzGxMdemkttKdXZBUb/view?usp=sharing">Resume</a>
         </div>
-        )}
+        )} */}
 
         {open && (
-        <div className="menu  OnlyMobile">
-            <a href="#home" >Home</a>
-            <a href="#skills" >Skills</a>
-            <a href="#journey" >Journey</a>
-            <a href="#visonary" >Visionary</a>
-            <a href="#projects" >Projects</a>
-            <a href="#contact" >Contact</a>
-            <a href="#contact">Share</a>
-            <a href="#contact">Email</a>
-            <a href="#contact">Resume</a>
+        <div className="menu">
+            <a href="#home" className='OnlyMobile'>Home</a>
+            <a href="#skills" className='OnlyMobile'>Skills</a>
+            <a href="#journey" className='OnlyMobile'>Journey</a>
+            <a href="#visonary" className='OnlyMobile'>Visionary</a>
+            <a href="#projects" className='OnlyMobile'>Projects</a>
+            <a href="#contact" className='OnlyMobile'>Contact</a>
+            <a href="#feedback" className='OnlyDesktop'>Feedback</a>
+            <a href="mailto:muthukumaranarc00@gmail.com" className='OnlyDesktop'>Email</a>
+            <a href="https://drive.google.com/file/d/1VNBXIq6xn_nQNVrzGxMdemkttKdXZBUb/view?usp=sharing" className='OnlyDesktop'>Resume</a>
         </div>
         )}
         </>
