@@ -7,15 +7,17 @@ public class UserDetails {
     String email;
     String feedback;
     String link;
+    String rating;
 
     public UserDetails(){}
-    public UserDetails(String name, String experience, String roleInIT, String email, String feedback, String link){
+    public UserDetails(String name, String experience, String roleInIT, String email, String feedback, String link, String rating){
         this.name = name;
         this.experience = experience;
         this.roleInIT = roleInIT;
         this.email = email;
         this.feedback = feedback;
         this.link = link;
+        this.rating = rating;
     }
     public String getName() {
         return name;
@@ -53,6 +55,10 @@ public class UserDetails {
     public void setLink(String link) {
         this.link = link;
     }
-
-    
+    public String getRating() {
+        return rating;
+    }
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
 }

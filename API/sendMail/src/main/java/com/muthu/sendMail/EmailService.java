@@ -10,6 +10,7 @@ public class EmailService {
 
     
     public boolean sendMailToMe(UserDetails data){
+
         String body = "Hello Muthukumaran,\n\n" +
             "A new visitor has explored your portfolio and shared their details:\n\n" +
             "Name: " + data.name + "\n" +
@@ -17,7 +18,8 @@ public class EmailService {
             "Role in IT: " + data.roleInIT + "\n" +
             "Email: " + data.email + "\n" +
             "Feedback on Portfolio: " + data.feedback + "\n" +
-            "Their Portfolio (if any): " + data.link + "\n\n" +
+            "Their Portfolio (if any): " + data.link + "\n" +
+            "Rating: " + data.rating + "\n\n" +
             "Make sure to check out their profile and maybe connect!\n\n" +
             "Stay consistent,\n" +
             "Your Portfolio Bot"
@@ -29,7 +31,7 @@ public class EmailService {
         String body = "Hi " + data.name + ",\n\n" +
             "Thank you for taking the time to visit my portfolio. I truly appreciate your interest.\n\n" +
             "Your feedback: \"" + data.feedback + "\"\n\n" +
-            "It's valuable to receive thoughts from professionals like you in the field of " + data.roleInIT + " with " + data.experience + " of experience.\n\n" +
+            "It's valuable to receive thoughts from professionals like you in the field of " + data.roleInIT + " with " + data.experience + "years of experience.\n\n" +
             "If you'd like to stay connected or collaborate in the future, feel free to reach out anytime.\n\n" +
             "Wishing you continued success in your career.\n\n" +
             "Warm regards,\n" +
