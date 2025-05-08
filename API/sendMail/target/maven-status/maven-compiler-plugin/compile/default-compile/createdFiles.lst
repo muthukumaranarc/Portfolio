@@ -1,8 +1,0 @@
-com\muthu\sendMail\ServerPortCustomizer.class
-com\muthu\sendMail\EmailService.class
-com\muthu\sendMail\CorsConfig.class
-com\muthu\sendMail\CorsConfig$1.class
-com\muthu\sendMail\UserDetails.class
-com\muthu\sendMail\MailController.class
-com\muthu\sendMail\SendMailApplication.class
-com\muthu\sendMail\CorsFilter.class

@@ -30,7 +30,7 @@ function Feedback() {
             rating: rating
         };
 
-        console.log("Data Sent to Server:", dataToSend); // 👈 DEBUG: Confirm rating is added
+        console.log("Data Sent to Server:", dataToSend);
 
         fetch("https://muthu-portfolio-4qfn.onrender.com/mail/send", {
             method: 'POST',

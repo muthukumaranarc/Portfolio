@@ -1,9 +1,0 @@
-{
-	"command": "java -jar sendMail-0.0.1-SNAPSHOT.jar",
-	"build_path": "C:\\Users\\1\\Documents\\Git\\Portfolio\\API\\dep",
-	"stack": "java17",
-	"env_variables": {},
-	"memory": 256,
-	"scripts": {},
-	"platform": "javase"
-}
