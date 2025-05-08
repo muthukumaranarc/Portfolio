@@ -44,7 +44,7 @@ h1 {
     width: 40px;
     border: none;
     position: absolute;
-    left: 1220px;
+    right: 50px;
     top: 30px;
     /* border: 2px solid red; */
     display:flex;
@@ -114,8 +114,8 @@ h1 {
     }
     
     .Menu_But {
-        left: 350px;
-        top: 15px;
+        right: 35px;
+        top: 20px;
     }
 
     .menu {

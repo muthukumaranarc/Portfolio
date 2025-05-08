@@ -1,9 +1,8 @@
 .feed {
     position: relative;
-    top: 950px;
+    top: 880px;
     text-align: center;
 }
-/* d? */
 .feed > h2 {
     text-align: center;
     color: rgba(56, 86, 255, 1);
@@ -60,12 +59,12 @@ button{
     font-size: 30px;
     background: none;
     border: none;
-    color: rgb(126, 126, 126);
+    color: rgba(126, 126, 126, 0.527);
     padding: 10px;
 }
 
 .clicked {
-    color: rgba(255, 195, 0, 1);
+    color: rgb(233, 180, 8);
 }
 
 .notClinked {
@@ -81,21 +80,27 @@ button{
     font-weight: bolder;
     font-size: 18px;
     border-radius: 20px;
-    position: absolute;
-    left: 900px;
-    bottom: 10px;
+    position: relative;
+    left: 300px;
+    bottom: 48px;
+}
+
+.subSec {
+    width: 300px;
+    /* border: 2px solid red; */
+    margin: 0 auto;
 }
 
 .adFeed {
     height: 30px;
     position: relative;
-    top: 920px;
+    top: 910px;
     /* border: 2px solid red; */
 }
 
 @media(max-width: 768px) {
     .feed {
-        top: 1050px;
+        top: 680px;
     }
     
     .feed > h2 {
@@ -128,4 +133,7 @@ button{
         margin: 0 auto;
     }
     
+    .adFeed {
+        top: 700px;
+    }
 }

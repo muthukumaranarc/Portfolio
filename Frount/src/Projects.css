@@ -1,6 +1,6 @@
 .Proj {
     position: relative;
-    top: 900px;
+    top: 830px;
 }
 
 .Proj > h2 {
@@ -20,24 +20,24 @@
 }
 
 .ProjBox {
-    width: 1260px;
+    width: 1280px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 5px;
     justify-content: center;
 }
 
 .adProj {
     height: 30px;
     position: relative;
-    top: 940px;
+    top: 850px;
     /* border: 2px solid red; */
 }
 
 @media(max-width: 768px) {
     .Proj {
-        top: 1000px;
+        top: 650px;
     }
     
     .Proj > h2 {
@@ -52,6 +52,10 @@
         position: relative;
         top: -15px;
         width: 400px;
+    }
+
+    .adProj {
+        top: 680px;
     }
     
 }

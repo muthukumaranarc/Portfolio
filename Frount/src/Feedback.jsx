@@ -82,6 +82,7 @@ function Feedback() {
                     <input name="link" type="text" value={formData.link} onChange={handleChange} placeholder="Your Portfolio Link" className='left' disabled={isDisabled}/>
                 </div>
 
+                <div className='subSec'>
                 {[1, 2, 3, 4, 5].map((n) => (
                     <button
                         key={n}
@@ -96,6 +97,7 @@ function Feedback() {
                 ))}
 
                 <button type="submit" className='submit' disabled={isDisabled}>{subBut}</button>
+                </div>
             </form>
         </div>
         </>

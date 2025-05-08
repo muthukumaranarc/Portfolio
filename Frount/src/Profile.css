@@ -6,7 +6,7 @@ body {
 
 .Name{
     position: absolute;
-    top: 200px;
+    top: 210px;
     left: 130px;
     color: rgba(67, 95, 255, 1);
     font-weight: bold;
@@ -16,7 +16,7 @@ body {
 
 .im {
     position: absolute;
-    top: 255px;
+    top: 265px;
     left: 130px;
     color: rgba(67, 95, 255, 1);
     font-weight: bold;
@@ -25,7 +25,7 @@ body {
 
 .glow {
     position: absolute;
-    top: 290px;
+    top: 300px;
     left: 215px;
     color: rgba(67, 95, 255, 1);
     font-weight: bold;
@@ -36,7 +36,7 @@ body {
 
 .quickAbout{
     position: absolute;
-    top: 340px;
+    top: 350px;
     left: 130px;
     color: rgba(123, 142, 255, 0.81);
     font-weight: bold;
@@ -48,7 +48,7 @@ body {
 .CheckResume {
     background: linear-gradient(90deg, #C226FF 0%, #9D06FF 36%, #0025FF 100%);
     position: absolute;
-    top: 440px;
+    top: 450px;
     left: 130px;
     width: 280px;
     height: 55px;
@@ -69,8 +69,8 @@ body {
     background-color: rgba(128, 146, 255, 1);
     border-radius: 50%;
     position: absolute;
-    top: 190px;
-    left: 900px;
+    top: 200px;
+    right: 115px;
     box-shadow:0 0 25px rgba(67, 95, 255, 1), 0 0 7px rgba(67, 95, 255, 1);
 }
 
@@ -79,9 +79,9 @@ body {
     display: inline-block;
     font-size: 90px;
     font-weight: bold;
-    position: relative;
-    left: 930px;
-    top: 260px;
+    position: absolute;
+    right: -110px;
+    top: 280px;
     color: rgba(186, 196, 255, 0.58);
     z-index: -1;
 }
@@ -97,9 +97,16 @@ body {
     }
     
     .Prof_bac {
+        display: none;
+        transform: rotate(90deg);
+        display: inline-block;
         font-size: 45px;
-        left: 180px;
-        top: 0px;
+        font-weight: bold;
+        position: absolute;
+        right: 0px;
+        top: 220px;
+        color: rgba(186, 196, 255, 0.58);
+        z-index: -1;
     }
 
     .Name{

@@ -1,8 +1,8 @@
 .foot{
     height: 250px;
-    max-width: 2000px;
+    max-width: 10000px;
     position: relative;
-    top: 1000px;
+    top: 900px;
     background-image: url('./assets/footBackgrount.png');
     background-size: cover;
     align-items: center;
@@ -93,7 +93,7 @@
     .foot{
         height: 200px;
         max-width: 800px;
-        top: 1100px;
+        top: 750px;
     }
     
     .footNav {

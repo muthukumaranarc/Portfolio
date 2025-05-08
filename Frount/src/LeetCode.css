@@ -1,6 +1,10 @@
 .Leet {
     position: relative;
-    top: 750px;
+    top: 790px;
+    margin: 0 auto;
+    /* border: 2px solid red; */
+    width: 1200px;
+    height: 380px;
 }
 
 .leet_logo {
@@ -8,7 +12,7 @@
     width: 350px;
     position: relative;
     top: 30px;
-    left: 150px;
+    left: 120px;
 }
 
 .Leet > p {
@@ -17,7 +21,7 @@
     font-weight: bolder;
     position: relative;
     top: 17px;
-    left: 130px;
+    left: 100px;
     width: 400px;
     text-align: center;
 }
@@ -25,7 +29,7 @@
 .leet_rank {
     position: relative;
     bottom: 180px;
-    left: 650px;
+    left: 615px;
     border-radius: 20px;
     height: 300px;
     width: 500px;
@@ -35,7 +39,7 @@
     background: linear-gradient(90deg, #C226FF 0%, #9D06FF 36%, #0025FF 100%);
     position: absolute;
     top: 240px;
-    left: 180px;
+    left: 160px;
     width: 280px;
     height: 55px;
     border-radius: 15px;
@@ -53,6 +57,8 @@
     .Leet {
         position: relative;
         top: 650px;
+        width: 400px;
+        height: 300px;
     }
     
     .leet_logo {

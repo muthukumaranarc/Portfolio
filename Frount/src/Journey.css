@@ -1,6 +1,6 @@
 .Jour{
     position: relative;
-    top: 650px;
+    top: 700px;
 }
 
 .Jour > h2 {
@@ -33,7 +33,7 @@
 .adJour {
     height: 30px;
     position: relative;
-    top: 690px;
+    top: 730px;
     /* border: 2px solid red; */
 }
 
@@ -60,4 +60,9 @@
         width: 400px;
         margin: 0 auto;
     }
+
+    .adJour {
+        top: 640px;
+    }
+    
 }
