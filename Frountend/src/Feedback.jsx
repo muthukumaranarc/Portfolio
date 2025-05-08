@@ -45,7 +45,7 @@ function Feedback() {
         })
         .then(() => {
             console.log(formData.rate);
-            alert("Feedback submitted successfully!");
+            setSubBut("Submitted");
             setFormData({
                 name: '',
                 experience: '',
@@ -58,10 +58,10 @@ function Feedback() {
         })
         .catch(error => {
             alert("Error submitting feedback!");
+            setSubBut("Submit");
             console.error(error);
         })
         .finally(() => {
-            setSubBut("Submit");
             setIsDisabled(false);
         });
     };

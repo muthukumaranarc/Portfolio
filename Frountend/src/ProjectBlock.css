@@ -15,17 +15,20 @@
 
 .year {
     position: relative;
-    left: 320px;
+    left: 270px;
     bottom: 50px;
 }
 
 .image {
+    display: block;
+    position: relative;
     width: 350px;
     height: 180px;
     background-color: white;
     margin: 0 auto;
-    position: relative;
     bottom: 55px;
+    border: 1px solid gray;
+    border-radius: 10px;
 }
 
 .frountLan {
