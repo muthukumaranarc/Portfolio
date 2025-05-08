@@ -1,0 +1,57 @@
+.Proj {
+    position: relative;
+    top: 900px;
+}
+
+.Proj > h2 {
+    text-align: center;
+    color: rgba(56, 86, 255, 1);
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.Proj > p {
+    text-align: center;
+    color: rgba(126, 145, 255, 1);
+    font-size: 16px;
+    font-weight: bolder;
+    position: relative;
+    bottom: 20px;
+}
+
+.ProjBox {
+    width: 1260px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.adProj {
+    height: 30px;
+    position: relative;
+    top: 940px;
+    /* border: 2px solid red; */
+}
+
+@media(max-width: 768px) {
+    .Proj {
+        top: 1000px;
+    }
+    
+    .Proj > h2 {
+        font-size: 25px;
+    }
+    
+    .Proj > p {
+        font-size: 14px;
+    }
+    
+    .ProjBox {
+        position: relative;
+        top: -15px;
+        width: 400px;
+    }
+    
+}

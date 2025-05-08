@@ -1,0 +1,92 @@
+.Leet {
+    position: relative;
+    top: 750px;
+}
+
+.leet_logo {
+    height: 100px;
+    width: 350px;
+    position: relative;
+    top: 30px;
+    left: 150px;
+}
+
+.Leet > p {
+    color: rgba(63, 70, 111, 1);
+    font-size: 16px;
+    font-weight: bolder;
+    position: relative;
+    top: 17px;
+    left: 130px;
+    width: 400px;
+    text-align: center;
+}
+
+.leet_rank {
+    position: relative;
+    bottom: 180px;
+    left: 650px;
+    border-radius: 20px;
+    height: 300px;
+    width: 500px;
+}
+
+.CheckRank {
+    background: linear-gradient(90deg, #C226FF 0%, #9D06FF 36%, #0025FF 100%);
+    position: absolute;
+    top: 240px;
+    left: 180px;
+    width: 280px;
+    height: 55px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width: 768px) {
+    .Leet {
+        position: relative;
+        top: 650px;
+    }
+    
+    .leet_logo {
+        height: 80px;
+        width: 280px;
+        top: 30px;
+        left: 0px;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .Leet > p {
+        font-size: 14px;
+        top: 40px;
+        left: 0px;
+        width: 350px;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .leet_rank {
+        display: none;
+    }
+    
+    .CheckRank {
+        position: relative;
+        top: 65px;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 250px;
+        height: 50px;
+    }
+}
