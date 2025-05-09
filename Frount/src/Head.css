@@ -62,7 +62,7 @@ h1 {
     justify-content: center;
     background-color: rgba(243, 245, 255, 0.521);
     position: absolute;
-    left: 1160px;
+    right: 50px;
     top: 70px;
     padding: 10px;
     z-index: 2;

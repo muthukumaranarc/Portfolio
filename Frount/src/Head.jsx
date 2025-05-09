@@ -33,7 +33,7 @@ function Head(){
             <a href="#contact" className='OnlyMobile'>Contact</a>
             <a href="#feedback">Feedback</a>
             <a href="mailto:muthukumaranarc00@gmail.com" className='OnlyDesktop'>Email</a>
-            <a href="https://drive.google.com/file/d/1IGsiQEtWNweQK01j0LyorBttq1U4yOlK/view?usp=sharing" className='OnlyDesktop'>Resume</a>
+            <a href="https://drive.google.com/file/d/1tACXRrB4JwklHmVZYsvVZM4NDj_GbXG2/view?usp=sharing" className='OnlyDesktop'>Resume</a>
         </div>
         )}
         </>
