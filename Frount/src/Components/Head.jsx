@@ -1,5 +1,5 @@
 import './Head.css'
-import menu from './assets/Menu_icon.png'
+import menu from '../assets/Menu_icon.png'
 import { useState } from 'react';
 
 function Head(){

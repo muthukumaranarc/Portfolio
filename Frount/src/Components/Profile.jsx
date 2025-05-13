@@ -8,7 +8,7 @@ function Profile() {
         <div className='glow'>Full Stack Web Developer</div>
         <div className='quickAbout'>I’m a computer science student with 9.9CGPA. I have solid knowledge of DSA. I actively engage in tech competitions and focus on building innovation solutions that solve real-world problems effectively. </div>
         <a 
-            href='https://drive.google.com/file/d/1tACXRrB4JwklHmVZYsvVZM4NDj_GbXG2/view?usp=sharing'
+            href='https://drive.google.com/file/d/1RQyJDI9LTJYIplsgiH040A3ulYFRWDgG/view?usp=sharing'
             target='_blank'
             className='CheckResume'>Check Resume</a>
         <div className='Prof_img'></div>

@@ -1,6 +1,6 @@
 import './Journey.css';
-import jour from './assets/Journey.png';
-import jourMob from './assets/JourneyMob.png';
+import jour from '../assets/Journey.png';
+import jourMob from '../assets/JourneyMob.png';
 
 function Journey() {
     return(

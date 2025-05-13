@@ -3,7 +3,7 @@
     max-width: 10000px;
     position: relative;
     top: 900px;
-    background-image: url('./assets/footBackgrount.png');
+    background-image: url('../assets/footBackgrount.png');
     background-size: cover;
     align-items: center;
 }
@@ -51,33 +51,33 @@
 }
 
 .mail {
-    background-image: url('./assets/Gmail.png');
+    background-image: url('../assets/Gmail.png');
     background-size: cover;
     align-items: center;
       
 }
 .linked {
-    background-image: url('./assets/LinkedIn.png');
+    background-image: url('../assets/LinkedIn.png');
     background-size: cover;
     align-items: center;
 }
 .insta {
-    background-image: url('./assets/Instagram.png');
+    background-image: url('../assets/Instagram.png');
     background-size: cover;
     align-items: center;
 }
 .whats {
-    background-image: url('./assets/WhhatsApp.png');
+    background-image: url('../assets/WhhatsApp.png');
     background-size: cover;
     align-items: center;
 }
 .call {
-    background-image: url('./assets/Call.png'); 
+    background-image: url('../assets/Call.png'); 
     background-size: cover;
     align-items: center;
 }
 .Git {
-    background-image: url('./assets/contGit.png');
+    background-image: url('../assets/contGit.png');
     background-size: cover;
     align-items: center;
 }

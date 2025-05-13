@@ -1,6 +1,6 @@
 import './LeetCode.css';
-import logo from './assets/LeetCodeLogo.png';
-import rank from './assets/LeetCode.png';
+import logo from '../assets/LeetCodeLogo.png';
+import rank from '../assets/LeetCode.png';
 
 function LeetCode() {
     return (

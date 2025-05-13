@@ -1,5 +1,5 @@
 import './Visionary.css';
-import map from './assets/map.png';
+import map from '../assets/map.png';
 
 function Visionary() {
     return(

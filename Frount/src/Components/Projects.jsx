@@ -1,6 +1,6 @@
 import ProjectBlock from './ProjectBlock';
 import './Projects.css'
-import portfolio from './assets/Projects/Portfolio.PNG';
+import portfolio from '../assets/Projects/Portfolio.PNG';
 
 function Projects() {
     return(

@@ -1,5 +1,4 @@
 import './Footer.css';
-// import background from './assets/footBackgrount.png';
 function Footer() {
     return (
         <>
