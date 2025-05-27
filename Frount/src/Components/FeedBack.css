@@ -98,6 +98,10 @@ button{
     /* border: 2px solid red; */
 }
 
+.IsDissabled {
+    background-color: rgba(167, 167, 167, 0.527);
+}
+
 @media(max-width: 768px) {
     .feed {
         top: 680px;

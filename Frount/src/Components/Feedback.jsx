@@ -24,13 +24,10 @@ function Feedback() {
         setIsDisabled(true);
         setSubBut("Processing...");
 
-        // Include the rating
         const dataToSend = {
             ...formData,
             rating: rating
         };
-
-        console.log("Data Sent to Server:", dataToSend);
 
         fetch("https://muthu-portfolio-4qfn.onrender.com/mail/send", {
             method: 'POST',
@@ -44,7 +41,6 @@ function Feedback() {
             return response.json();
         })
         .then(() => {
-            console.log(formData.rate);
             setSubBut("Submitted");
             setFormData({
                 name: '',
@@ -84,19 +80,10 @@ function Feedback() {
 
                 <div className='subSec'>
                 {[1, 2, 3, 4, 5].map((n) => (
-                    <button
-                        key={n}
-                        type="button"
-                        onClick={() => setRating(n)}
-                        value={formData.rate}
-                        className={ `${rating >= n ? 'clicked' : 'notClicked'}`}
-                        disabled={isDisabled}
-                    >
-                        ★
-                    </button>
+                    <button key={n} type="button" onClick={() => setRating(n)} value={formData.rate} className={ `${rating >= n ? 'clicked' : 'notClicked'}`} disabled={isDisabled}>★</button>
                 ))}
 
-                <button type="submit" className='submit' disabled={isDisabled}>{subBut}</button>
+                <button type="submit" className={isDisabled ?'IsDissabled submit' : 'submit'} disabled={isDisabled}>{subBut}</button>
                 </div>
             </form>
         </div>
