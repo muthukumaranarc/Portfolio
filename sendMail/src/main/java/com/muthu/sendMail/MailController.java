@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "https://muthukumaran-portfolio.web.app")
+// @CrossOrigin(origins = "https://muthukumaran-portfolio.web.app")
 @RequestMapping("/mail")
 public class MailController {
 

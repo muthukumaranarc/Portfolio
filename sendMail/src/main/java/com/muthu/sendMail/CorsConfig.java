@@ -15,9 +15,9 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOriginPatterns("https://muthukumaran-portfolio.web.app")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedMethods("POST")
                         .allowedHeaders("*")
-                        .allowCredentials(true); // Optional if needed
+                        .allowCredentials(true);
             }
         };
     }
