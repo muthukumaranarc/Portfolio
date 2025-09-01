@@ -1,66 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-body {
-    font-family: 'Poppins', sans-serif;
+.pro {
+    margin-top: 10px;
+    height: 650px;
 }
 
-.Name{
-    position: absolute;
-    top: 210px;
+.Name {
+    position: relative;
+    top: 120px;
     left: 130px;
-    color: rgba(67, 95, 255, 1);
+    color: rgba(0, 21, 146, 1);
     font-weight: bold;
-    font-size: 35px;
+    font-size: 40px;
     line-height: 1.2;
+    z-index: 2;
 }
 
 .im {
-    position: absolute;
-    top: 265px;
+    position: relative;
+    top: 90px;
     left: 130px;
-    color: rgba(67, 95, 255, 1);
+    color: rgba(0, 21, 146, 1);
     font-weight: bold;
-    font-size: 30px;
+    font-size: 33px;
+    z-index: 2;
 }
 
 .glow {
-    position: absolute;
-    top: 300px;
-    left: 215px;
-    color: rgba(67, 95, 255, 1);
+    position: relative;
+    top: 13px;
+    left: 220px;
+    color: rgba(0, 21, 146, 1);
     font-weight: bold;
-    font-size: 31px;
+    font-size: 34px;
     line-height: 1.2;
-    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px rgba(67, 95, 255, 1), 0 0 7px rgba(67, 95, 255, 1);
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 5px rgba(67, 95, 255, 1), 0 0 10px rgba(67, 95, 255, 1);
+    z-index: 2;
 }
 
-.quickAbout{
-    position: absolute;
-    top: 350px;
+.quickAbout {
+    position: relative;
+    top: 20px;
     left: 130px;
-    color: rgba(123, 142, 255, 0.81);
+    color: rgba(0, 21, 146, 0.77);
     font-weight: bold;
     font-size: 16px;
     line-height: 1.2;
-    width: 500px;
+    width: 530px;
+    z-index: 2;
 }
 
 .CheckResume {
-    background: linear-gradient(90deg, #C226FF 0%, #9D06FF 36%, #0025FF 100%);
-    position: absolute;
-    top: 450px;
+    position: relative;
+    top: 50px;
     left: 130px;
     width: 280px;
     height: 55px;
     border-radius: 15px;
     border: none;
-    color: white;
+    color: black;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bolder;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(235, 235, 235, 1);
+    z-index: 0;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 0px 10px #9D06FF;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.CheckResume::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 4px;
+    border-radius: inherit;
+    background-image: conic-gradient(from var(--angle), #C226FF, #9D06FF, #0025FF, #C226FF);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotateBorder 2s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotateBorder {
+    to {
+        --angle: 360deg;
+    }
+}
+
+.CheckResume:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 1px 15px #9D06FF;
+    cursor: pointer;
+}
+
+.hi {
+  position: absolute;
+  display: block;
+  height: 150px;
+  width: 150px;
+  top: 100px;
+  right: 90px;
+  opacity: 0;
+  transition: all 0.09s ease-out;
+}
+
+.hi.active {
+  opacity: 1;
 }
 
 .Prof_img {
@@ -68,23 +127,75 @@ body {
     height: 290px;
     background-color: rgba(128, 146, 255, 1);
     border-radius: 50%;
-    position: absolute;
-    top: 200px;
-    right: 115px;
-    box-shadow:0 0 25px rgba(67, 95, 255, 1), 0 0 7px rgba(67, 95, 255, 1);
+    position: relative;
+    bottom: 235px;
+    left: 65vw;
+    box-shadow: 0 0 25px rgba(67, 95, 255, 1), 0 0 7px rgba(67, 95, 255, 1);
 }
 
-.Prof_bac {
-    transform: rotate(90deg);
-    display: inline-block;
-    font-size: 90px;
-    font-weight: bold;
+.muthu {
+    display: block;
     position: absolute;
-    right: -110px;
-    top: 280px;
-    color: rgba(186, 196, 255, 0.58);
-    z-index: -1;
+    top: 140px;
+    right: 120px;
+    height: 430px;
+    width: 430px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px #4c5aae);
+    z-index: 1;
 }
+
+.muthu:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 7px #4c5aae);
+}
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup box */
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 
 @media (max-width: 768px) {
     .Prof_img {
@@ -95,7 +206,7 @@ body {
         left: 0px;
         margin: 0 auto;
     }
-    
+
     .Prof_bac {
         display: none;
         transform: rotate(90deg);
@@ -109,31 +220,31 @@ body {
         z-index: -1;
     }
 
-    .Name{
+    .Name {
         top: 420px;
         left: 40px;
         font-size: 25px;
     }
-    
+
     .im {
         top: 468px;
         left: 41px;
         font-size: 22px;
     }
-    
+
     .glow {
         top: 495px;
         left: 110px;
         font-size: 22px;
     }
-    
-    .quickAbout{
+
+    .quickAbout {
         top: 540px;
         left: 40px;
         font-size: 15px;
         width: 360px;
     }
-    
+
     .CheckResume {
         top: 660px;
         left: 40px;

@@ -14,14 +14,15 @@ import Git from '../assets/Git.png'
 import GitHub from '../assets/GitHub.png'
 
 function Skills() {
+    
     return(
         <>
         <div className='adSkill'><section id='skills'></section></div>
         <div className="skill_block">
             <div className='skill_tit'>SKILLS</div>
             <div className='skill_sub'>I can able to work with frontend and backend</div>
-            <div className='Frountend'>
-                <h1>Frountend</h1>
+            <div className='Frontend'>
+                <h1>Frontend</h1>
                 <div className='html'><img src={HTML}/><p>HTML</p></div>
                 <div className='javaScript'><img src={JavaScript}/><p>JavaScript</p></div>
                 <div className='css'><img src={CSS}/><p>css</p></div>

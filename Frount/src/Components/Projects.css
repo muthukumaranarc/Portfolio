@@ -1,18 +1,18 @@
 .Proj {
     position: relative;
-    top: 830px;
+    top: 100px;
 }
 
 .Proj > h2 {
     text-align: center;
-    color: rgba(56, 86, 255, 1);
+    color: rgba(0, 21, 146, 1);
     font-size: 30px;
     font-weight: bolder;
 }
 
 .Proj > p {
     text-align: center;
-    color: rgba(126, 145, 255, 1);
+    color: rgba(0, 21, 146, 0.77);
     font-size: 16px;
     font-weight: bolder;
     position: relative;
@@ -31,7 +31,7 @@
 .adProj {
     height: 30px;
     position: relative;
-    top: 850px;
+    top: 130px;
     /* border: 2px solid red; */
 }
 

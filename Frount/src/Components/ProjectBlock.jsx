@@ -1,20 +1,30 @@
 import './ProjectBlock.css'
 
-function ProjectBlock({img, title, year, frount, back, def, link}) {
-    return(
-        <div className='ProjBlock'>
+function ProjectBlock({ img, title, year, lan, def, link }) {
+
+    return (
+        <div className='ProjBlock' onClick={() => { window.open(link, "_blank") }}>
             <h2>{title}</h2>
             <p className='year'>{year}</p>
             <img className='image' src={img} />
-            <p className='frountLan'>Frountend: {frount}</p>
-            <p className='backLan'>Backend: {back}</p>
+            <div className='lan'>
+                {
+                    lan.map((item, index) => (
+                        <LanBlock key={index} data = {item}/>
+                    ))
+                }
+            </div>
             <p className='def'>{def}</p>
-            <a
-                href={link}
-                target='_blank'
-            >View</a>
         </div>
     );
+}
+
+function LanBlock({data}) {
+    return (
+        <div className='lanBlock'>
+            <p>{data}</p>
+        </div>
+    )
 }
 
 export default ProjectBlock;

@@ -1,29 +1,33 @@
 .Jour{
     position: relative;
-    top: 700px;
+    /* top: 700px; */
+    bottom: 50px;
+    padding-bottom: 20px;
 }
 
 .Jour > h2 {
     text-align: center;
-    color: rgba(56, 86, 255, 1);
+    color: rgba(0, 21, 146, 1);
     font-size: 30px;
     font-weight: bolder;
     padding-top: 16px;
+    position: relative;
+    top: 20px;
 }
 
 .Jour > p {
     font-size: 16px;
     text-align: center;
-    color: rgba(126, 145, 255, 0.63);
+    color: rgba(0, 21, 146, 0.77);
     position: relative;
-    bottom: 20px;
+    /* bottom: 20px; */
     font-weight: bolder;
 }
 
 .JourImage {
     display: flex;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .JourImageMob {
@@ -33,7 +37,8 @@
 .adJour {
     height: 30px;
     position: relative;
-    top: 730px;
+    top: 20px;
+    bottom: 60px;
     /* border: 2px solid red; */
 }
 

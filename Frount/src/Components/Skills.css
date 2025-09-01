@@ -1,51 +1,60 @@
 .skill_block {
-    background-color: rgba(183, 193, 254, 0.28);
+    background-color: rgba(233, 233, 233, 1);
     width: 1100px;
     height: 620px;
     margin: 0 auto;
     position: relative;
-    top: 620px;
+    bottom: 100px;
     border-radius: 20px;
+    box-shadow: inset 0px 0px 14px rgba(69, 83, 160, 0.486);
 }
 .adSkill {
-    height: 30px;
+    height: 20px;
     position: relative;
-    top: 610px;
-    /* border: 2px solid red; */
+    /* top: 610px; */
+    bottom: 100px;
+    /* border: 1px solid red; */
 }
 
 .skill_tit {
     text-align: center;
-    color: rgba(56, 86, 255, 1);
+    color: rgba(0, 21, 146, 1);
     font-size: 30px;
     font-weight: bolder;
-    padding-top: 16px;
+    padding-top: 25px;
 }
 
 .skill_sub {
     text-align: center;
-    color: rgba(126, 145, 255, 1);
+    color: rgba(0, 21, 146, 0.77);
     font-size: 16px;
     font-weight: bolder;
-    padding-top: 16px;
+    padding-top: 6px;
 }
 
-.Frountend, .Backend, .Other {
-    background: rgba(185, 192, 240, 0.479);
+.Frontend, .Backend, .Other {
+    background: rgba(0, 0, 0, 0);
     width: 450px;
     height: 200px;
-    border: 3px solid rgba(96, 104, 148, 0.38);
+    border: 3px solid rgba(96, 104, 148, 0.151);
     border-radius: 18px;
     z-index: 2;
-    box-shadow: 0px 0px 30px rgba(159, 174, 255, 0.81);
+    box-shadow: 3px 3px 15px rgba(175, 180, 211, 1);
+    transition: transform 0.2s ease;
 }
 
-.Frountend > h1, .Backend > h1, .Other > h1 {
+.Frontend:hover, .Backend:hover, .Other:hover {
+    transform: scale(1.03);
+    box-shadow: 5px 5px 15px rgba(175, 180, 211, 1);
+}
+
+.Frontend > h1, .Backend > h1, .Other > h1 {
     text-align: center;
     font-size: 20px;
+    margin-top: 20px;
 }
 
-.Frountend {
+.Frontend {
     position: absolute;
     left: 80px;
     top: 140px;
@@ -70,8 +79,8 @@
     width: 30px;
 }
 
-.Frountend > div, .Backend > div, .Other > div {
-    border: 2px solid rgba(83, 109, 255, 0.73);
+.Frontend > div, .Backend > div, .Other > div {
+    border: 2px solid rgba(76, 90, 174, 1);
     display: flex;
     /* width: 150px; */
     height: 40px;
@@ -81,9 +90,11 @@
     justify-content: center;
 }
 
-.Frountend > div > p , .Backend > div > p , .Other > div > p {
+
+
+.Frontend > div > p , .Backend > div > p , .Other > div > p {
     padding-left: 8px;
-    color: rgba(126, 145, 255, 1);
+    color: rgba(76, 90, 174, 1);
     font-size: 16px;
     font-weight: bolder;;
     font-size: 16px;
@@ -94,91 +105,91 @@
     width: 115px;
     position: absolute;
     left: 80px;
-    top: 55px;
+    top: 65px;
 }
 
 .javaScript{
     width: 150px;
     position: absolute;
     left: 215px;
-    top: 55px;
+    top: 65px;
 }
 
 .css {
     width: 90px;
     position: absolute;
     left: 105px;
-    top: 110px;
+    top: 120px;
 }
 
 .reactJS {
     width: 125px;
     position: absolute;
     left: 210px;
-    top: 110px;
+    top: 120px;
 }
 
 .java {
     width: 100px;
     position: absolute;
     left: 100px;
-    top: 55px;
+    top: 65px;
 }
 
 .nodeJS {
     width: 120px;
     position: absolute;
     left: 220px;
-    top: 55px;
+    top: 65px;
 }
 
 .springBoot {
     width: 160px;
     position: absolute;
     left:140px;
-    top: 110px;
+    top: 120px;
 }
 
 .mongoDB {
     width: 140px;
     position: absolute;
     left: 60px;
-    top: 55px;
+    top: 65px;
 }
 
 .mySQL {
     width: 120px;
     position: absolute;
     left: 217px;
-    top: 55px;
+    top: 65px;
 }
 
 .figma {
     width: 130px;
     position: absolute;
     left: 353px;
-    top: 55px;
+    top: 65px;
 }
 
 .maven {
     width: 120px;
     position: absolute;
     left: 500px;
-    top: 55px;
+    top: 65px;
 }
 
 .git {
     width: 85px;
     position: absolute;
     left: 235px;
-    top: 115px;
+    top: 125px;
 }
 
 .gitHub {
     width: 120px;
     position: absolute;
     left: 340px;
-    top: 115px;
+    top: 125px;
 }
 
 @media(max-width: 768px) {

@@ -8,7 +8,7 @@ function Journey() {
         <div className='adJour'><section id='journey'></section></div>
         <div className='Jour'>
         <h2 className='jour_tit'>My Journey</h2>
-        <p>Here is wonderful journey </p>
+        <p>Here is my wonderful journey of learning</p>
         <img className='JourImage' src={jour}></img>
         <img className='JourImageMob' src={jourMob}></img>
         </div>

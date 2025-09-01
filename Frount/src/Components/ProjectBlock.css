@@ -1,11 +1,17 @@
 .ProjBlock {
     width: 388px;
-    height: 550px;
-    background-color: rgba(210, 217, 255, 1);
+    height: 500px;
+    background-color: rgba(220, 222, 228, 0.562);
     border-radius: 15px;
     margin: 15px;
-    border: 1px solid rgba(176, 188, 255, 0.678);
-    box-shadow: 0px 0px 30px rgba(176, 188, 255, 0.678);
+    border: 1px solid rgba(220, 222, 228, 1);
+    box-shadow: 2px 3px 10px rgba(36, 56, 114, 0.486);
+    transition: all 0.3s ease;
+}
+
+.ProjBlock:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 6px 15px rgba(36, 56, 114, 0.486);
 }
 
 .ProjBlock > h2 {
@@ -33,28 +39,32 @@
     border-radius: 10px;
 }
 
-.frountLan {
+.lan {
+    display: flex;
     position: relative;
     bottom: 50px;
-    left: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    color: rgba(9, 17, 69, 1);
+    margin: 20px;
 }
 
-.backLan {
-    position: relative;
-    bottom: 55px;
-    left: 20px;
+.lanBlock {
+    height: 25px;
+    /* width: 100px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 22, 146, 0.685);
+    border-radius: 20px;
+    color: rgba(0, 22, 146, 0.74);
     font-size: 14px;
-    font-weight: bolder;
-    color: rgba(9, 17, 69, 1);
 }
 
 .def {
     width: 320px;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 700;
     position: relative;
     bottom: 55px;
     left: 20px;

@@ -1,45 +1,44 @@
 .Leet {
     position: relative;
-    top: 790px;
+    top: 50px;
     margin: 0 auto;
     /* border: 2px solid red; */
+    justify-content: center;
     width: 1200px;
     height: 380px;
+    display: flex;
+    margin-top: 20px;
+}
+
+.leetCont {
+    margin: 40px;
+    margin-left: 70px;
 }
 
 .leet_logo {
     height: 100px;
     width: 350px;
     position: relative;
-    top: 30px;
-    left: 120px;
+    display: block;
 }
 
-.Leet > p {
+
+.leetCont>p {
     color: rgba(63, 70, 111, 1);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bolder;
     position: relative;
-    top: 17px;
-    left: 100px;
-    width: 400px;
-    text-align: center;
+    bottom: 10px;
+    width: 440px;
 }
 
-.leet_rank {
-    position: relative;
-    bottom: 180px;
-    left: 615px;
-    border-radius: 20px;
-    height: 300px;
-    width: 500px;
-}
+
 
 .CheckRank {
     background: linear-gradient(90deg, #C226FF 0%, #9D06FF 36%, #0025FF 100%);
-    position: absolute;
+    /* position: absolute;
     top: 240px;
-    left: 160px;
+    left: 160px; */
     width: 280px;
     height: 55px;
     border-radius: 15px;
@@ -51,48 +50,196 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px #9D06FF;
 }
 
-@media(max-width: 768px) {
-    .Leet {
-        position: relative;
-        top: 650px;
-        width: 400px;
-        height: 300px;
+.CheckRank:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 15px #9D06FF;
+}
+
+/* .leet_rank {
+    position: relative;
+    margin-top: 40px;
+    margin-left: 20px;
+    border-radius: 20px;
+    height: 300px;
+    width: 500px;
+} */
+
+.leet_progress {
+    border-radius: 50%;
+    /* background: rgb(141, 141, 141); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leet_progress_inner {
+    position: absolute;
+    border-radius: 50%;
+    height: 167px;
+    width: 167px;
+    border: 2px solid rgba(51, 51, 51, 0.253);
+}
+
+.leet_left {
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    gap: 10px;
+
+    /* credit card proportions */
+    width: 440px;
+    height: 250px;
+    border-radius: 16px;
+
+    background: rgb(38, 38, 38);
+    border: 2px solid rgba(196, 196, 196, 0.233);
+    box-shadow: 5px 8px 10px rgba(51, 51, 51, 0.596);
+
+    /* gentle 3D tilt */
+    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+
+    /* floating animation */
+    animation: floatTilt 6s ease-in-out infinite;
+    animation-delay: 1s;
+
+    padding: 20px;
+    /* keep inner spacing */
+    transform: perspective(1000px) rotateY(5deg) rotateX(2deg) translateY(0);
+}
+
+@keyframes floatTilt {
+    0% {
+        transform: perspective(1000px) rotateY(5deg) rotateX(2deg) translateY(0);
     }
-    
-    .leet_logo {
-        height: 80px;
-        width: 280px;
-        top: 30px;
-        left: 0px;
-        display: block;
-        margin: 0 auto;
+
+    25% {
+        transform: perspective(1000px) rotateY(4deg) rotateX(1.5deg) translateY(-6px);
     }
-    
-    .Leet > p {
-        font-size: 14px;
-        top: 40px;
-        left: 0px;
-        width: 350px;
-        display: block;
-        margin: 0 auto;
-        text-align: center;
+
+    50% {
+        transform: perspective(1000px) rotateY(5deg) rotateX(2deg) translateY(0);
     }
-    
-    .leet_rank {
-        display: none;
+
+    75% {
+        transform: perspective(1000px) rotateY(6deg) rotateX(2.5deg) translateY(-6px);
     }
-    
-    .CheckRank {
-        position: relative;
-        top: 65px;
-        left: 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        width: 250px;
-        height: 50px;
+
+    100% {
+        transform: perspective(1000px) rotateY(5deg) rotateX(2deg) translateY(0);
+
     }
 }
+
+
+    .leet_progress {
+        width: 200px;
+        text-align: center;
+        font-weight: bolder;
+    }
+
+    .leet_stats {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-left: 50px;
+    }
+
+    .leet_card {
+        padding: 10px 10px;
+        width: 70px;
+        border-radius: 12px;
+        background: rgb(65, 65, 65);
+        text-align: center;
+        /* font-weight: bold; */
+        height: 50px;
+        border: 2px solid rgba(150, 150, 150, 0.253);
+    }
+
+    .leet_card>.head {
+        position: relative;
+        margin-top: -2px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        /* font-size: 13px; */
+    }
+
+    .leet_card>.rankc {
+        color: white;
+        margin-top: 5px;
+        position: relative;
+        right: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .totalc {
+        color: rgba(255, 255, 255, 0.815);
+        font-size: 12px;
+        position: relative;
+        bottom: 42px;
+        left: 10px;
+    }
+
+    .easy>.head {
+        color: #00e5ff;
+    }
+
+    .medium>.head {
+        color: #ffb300;
+    }
+
+    .hard>.head {
+        color: #ff5252;
+    }
+
+
+
+    @media(max-width: 768px) {
+        .Leet {
+            position: relative;
+            top: 650px;
+            width: 400px;
+            height: 300px;
+        }
+
+        .leet_logo {
+            height: 80px;
+            width: 280px;
+            top: 30px;
+            left: 0px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .Leet>p {
+            font-size: 14px;
+            top: 40px;
+            left: 0px;
+            width: 350px;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .leet_rank {
+            display: none;
+        }
+
+        .CheckRank {
+            position: relative;
+            top: 65px;
+            left: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 250px;
+            height: 50px;
+        }
+    }
