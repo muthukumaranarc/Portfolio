@@ -2,7 +2,8 @@
     position: relative;
     top: 150px;
     text-align: center;
-    /* margin-bottom: 10px; */
+    margin-bottom: 200px;
+    /* border:2px solid red; */
 }
 .feed > h2 {
     text-align: center;
@@ -126,7 +127,8 @@ button{
 
 @media(max-width: 768px) {
     .feed {
-        top: 680px;
+        top: -10px;
+        margin-bottom: 50px;
     }
     
     .feed > h2 {
@@ -160,6 +162,7 @@ button{
     }
     
     .adFeed {
-        top: 700px;
+        top: 0px;
+        /* border: 1px solid red; */
     }
 }

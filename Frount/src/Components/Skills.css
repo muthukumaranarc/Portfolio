@@ -196,7 +196,10 @@
     .skill_block {
         width: 380px;
         height: 835px;
-        top: 530px;
+        top: 100px;
+        /* border: 2px solid red; */
+        box-shadow: none;
+        background-color: rgba(235, 235, 235, 1);
     }
     
     .skill_tit {
@@ -207,7 +210,7 @@
         font-size: 14px;
     }
     
-    .Frountend, .Backend, .Other {
+    .Frontend, .Backend, .Other {
         width: 350px;
         height: 200px;
         position: relative;
@@ -220,7 +223,7 @@
         font-size: 18px;
     }
     
-    .Frountend {
+    .Frontend {
         top: 30px;
     }
     
@@ -309,6 +312,7 @@
     }
 
     .adSkill {
-        top: 535px;
+        /* border: 2px solid red; */
+        top: 120px;
     }
 }

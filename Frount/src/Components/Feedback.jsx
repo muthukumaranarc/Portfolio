@@ -29,7 +29,7 @@ function Feedback() {
             rating: rating
         };
 
-        fetch("https://muthu-portfolio-4qfn.onrender.com/mail/send", {
+        fetch("https://muthu-portfolio-gfq8.onrender.com/send", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

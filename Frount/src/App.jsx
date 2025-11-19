@@ -10,7 +10,7 @@ import Feedback from './Components/Feedback'
 import Footer from './Components/Footer'
 import { useEffect } from "react";
 import arrow from './assets/Arrow.png'
-import { useState} from "react";
+import { useState } from "react";
 
 const loader = document.getElementById('loader');
 if (loader) {
@@ -74,12 +74,10 @@ function App() {
 
 
   return (
-    <div className='All'>
-      {showButton && (
-        <a href="#home" className="upHome">
-          <img src={arrow} alt="arrow" />
-        </a>
-      )}
+    <>
+      <a href="#home" className={`upHome ${showButton ? "show" : ""}`}>
+        <img src={arrow} alt="arrow" />
+      </a>
       <Head />
       <Profile />
       <Skills />
@@ -89,7 +87,7 @@ function App() {
       <Projects />
       <Feedback />
       <Footer />
-    </div>
+    </>
   );
 }
 

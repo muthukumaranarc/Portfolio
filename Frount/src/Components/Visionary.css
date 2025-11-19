@@ -1,6 +1,6 @@
 .Visi {
     position: relative;
-    top: 80px;
+    top: 60px;
     height: 1000px;
     width: 1000px;
     margin: 0 auto;
@@ -78,7 +78,7 @@
 .adVis {
     height: 30px;
     position: relative;
-    top: 160px;
+    top: 120px;
     /* border: 2px solid red; */
 }
 
@@ -96,12 +96,14 @@
 
 @media(max-width: 768px) {
     .adVis {
-        top: 700px;
+        top: 160px;
+        /* border: 2px solid red; */
     }
 
     .Visi {
-        top: 670px;
+        top: 100px;
         width: 400px;
+        /* border: 2px solid red; */
     }
     
     .Visi > h2 {
@@ -114,15 +116,16 @@
     
     .map {
         position: absolute;
-        left: -10px;
-        top: 180px;
+        left: -5px;
+        top: 170px;
+        height: 550px;
     }
     
     .VisBlock {
         width: 350px;
         margin: none;
         position: relative;
-        left: 20px;
+        left: 15px;
     }
     
     .VisBlock > h2 {
@@ -132,28 +135,28 @@
     }
     
     .VisBlock > p {
-        width: 300px;
-        left: 40px;
+        width: 320px;
+        left: 20px;
         top: -4px;
         font-weight: bold;
-        font-size: 14px;
+        font-size: 13px;
     }
     
     .A {
         position: relative;
         top: 11px;
-        height: 210px;
+        height: 180px;
     }
     
     .B {
         position: relative;
-        top: 60px;
-        height: 215px;
+        top: 45px;
+        height: 200px;
     }
     
     .C {
         position: relative;
-        height: 230px;
-        top: 110px;
+        height: 200px;
+        top: 80px;
     }
 }

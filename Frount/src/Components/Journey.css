@@ -45,7 +45,7 @@
 @media(max-width: 768px) {
     .Jour{
         position: relative;
-        top: 600px;
+        top: 70px;
     }
     
     .Jour > h2 {
@@ -64,10 +64,11 @@
         display: block;
         width: 400px;
         margin: 0 auto;
+        margin-top: 40px;
     }
 
     .adJour {
-        top: 640px;
+        top: 140px;
     }
     
 }

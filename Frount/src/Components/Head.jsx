@@ -1,14 +1,28 @@
-import './Head.css'
+import './Head.css';
+import menu from '../assets/menu_icon.png';
+import {  useState } from 'react';
 
 function Head() {
+    const [open, setOpen] = useState(false);
     return (
-        <div className='head' >
-            <div style={{position:'relative', bottom:"20px"}}><section id='home'></section></div>
+        <div className='head'>
+            <div style={{position:'relative', bottom:"20px"}}>
+                <section id='home'></section>
+            </div>
+
             <div className='main'>
                 <div className='logo'></div>
                 <h1>Hi, there</h1>
             </div>
-            <div className="nav" id="nav">
+
+            <img 
+                src={menu} 
+                alt="menu" 
+                className="menu-btn" 
+                onClick={() => setOpen(!open)} 
+            />
+
+            <div className={`nav ${open ? "show" : ""}`} id="nav" onClick={() => {setTimeout(() => (setOpen(false)), 500) }}>
                 <a href="#skills">Skills</a>
                 <a href="#journey">Journey</a>
                 <a href="#visonary">Visionary</a>

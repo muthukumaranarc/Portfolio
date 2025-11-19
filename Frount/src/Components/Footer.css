@@ -1,27 +1,35 @@
-.foot{
-    height: 240px;
-    width: 100%;
+.foot {
+    height: 210px;
+    width: 99vw;
     position: relative;
-    top: 180px;
+    top: 0px;
     background-color: rgba(84, 97, 108, 1);
     color: white;
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
+    /* border:2px solid red; */
 }
 
 .footNav {
-    display: block;
+    display: flex;
     position: relative;
     margin: 0 auto;
-    width: 420px;
+    /* width: 420px; */
     /* border: 2px solid red; */
     top: 30px;
+    gap: 20px;
+    justify-content: center;
 }
 
-.footNav > a {
-    padding: 10px;
+.footNav>a {
+    /* border: 2px solid red; */
     text-decoration: none;
     color: white;
     font-size: 18px;
+    display: block;
+}
+
+.footNav > a:hover {
+    transform: scale(1.1);
 }
 
 .thank {
@@ -41,11 +49,10 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    /* border: 1px solid red; */
 
 }
 
-.contact > a  {
+.contact>a {
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -53,13 +60,14 @@
 }
 
 .contact .icon {
-  width: 35px;   /* adjust size */
-  height: 35px;
-  margin: 8px;
+    width: 35px;
+    /* adjust size */
+    height: 35px;
+    margin: 8px;
 }
 
 
-.contact > div {
+.contact>div {
     height: 50px;
     width: 50px;
     background-color: white;
@@ -68,49 +76,56 @@
     transition: all 0.3s ease;
 }
 
-.contact > div:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.753);
+.contact>div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.753);
 }
 
-/* .adFoot {
+.adFoot {
     height: 0px;
     position: relative;
-    top: 1000px;
-    border: 2px solid red;
-} */
+    top: 150px;
+}
 
-@media(max-width: 768px){
-    .foot{
+@media(max-width: 768px) {
+    .foot {
         height: 200px;
         max-width: 800px;
-        top: 750px;
+        /* border: 2px solid red; */
+        top: 0px;
     }
     
     .footNav {
         width: 300px;
-        top: 50px;
+        top: 20px;
+        gap: 10px;
     }
-    
-    .footNav > a {
+
+    .footNav>a {
         padding: 5px;
         font-size: 14px;
     }
-    
-    .thaink {
-        font-size: 13px;
-        top: 65px;
-        width: 350px;
-    }
-    
+
     .contact {
         width: 300px;
-        top: 60px;
+        top: 35px;
     }
-    
-    .contact > a {
+
+    .contact>a {
         height: 30px;
         width: 30px;
         margin: 10px;
     }
+
+    .thank {
+        top: 55px;
+    }
+
+    .adFoot {
+        height: 0px;
+        position: relative;
+        top: 0px;
+        /* border: 2px solid red; */
+    }
+
 }

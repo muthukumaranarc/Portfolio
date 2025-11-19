@@ -37,7 +37,7 @@
 
 @media(max-width: 768px) {
     .Proj {
-        top: 650px;
+        top: -40px;
     }
     
     .Proj > h2 {
@@ -55,7 +55,7 @@
     }
 
     .adProj {
-        top: 680px;
+        top: -10px;
     }
     
 }

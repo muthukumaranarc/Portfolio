@@ -8,25 +8,23 @@ function LeetCode() {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    fetch("https://leetcode-stats-api.herokuapp.com/Jq4H1BglTL")
+    fetch("https://muthu-portfolio-gfq8.onrender.com/leetcode")
       .then((res) => res.json())
       .then((data) => setStats(data));
   }, []);
 
-//   if (!stats) {
-//     return <p>Loading LeetCode stats...</p>;
-//   }
-
   return (
     <div className='Leet'>
-      {/* Left side: Progress Circle */}
+      {
+        (window.innerWidth <= 768) ? <img src={logo} alt="leet_logo" className='leet_logo' /> : <></>
+      }
       <div className="leet_left">
         <div className="leet_progress">
-            <div className='leet_progress_inner'/>
+          <div className='leet_progress_inner' />
           <CircularProgressbar
             value={stats?.totalSolved}
             maxValue={stats?.totalQuestions}
-            text={`${stats? stats.totalSolved : 0}`}
+            text={`${stats ? stats.totalSolved : 0}`}
             styles={buildStyles({
               textColor: "white",
               pathColor: "#ffffffff",
@@ -53,10 +51,13 @@ function LeetCode() {
         </div>
       </div>
       <div className='leetCont'>
-        <img src={logo} alt="leet_logo" className='leet_logo' />
+
+        {
+          (window.innerWidth > 768) ? <img src={logo} alt="leet_logo" className='leet_logo' /> : <></>
+        }
 
         <p>
-          Additionally, I have solved {stats?.totalSolved} problems in LeetCode using 
+          Additionally, I have solved {stats?.totalSolved} problems in LeetCode using
           Java and JavaScript to enhance my knowledge in DSA and Core Concepts.
         </p>
 
