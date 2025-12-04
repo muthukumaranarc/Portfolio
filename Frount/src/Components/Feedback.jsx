@@ -68,6 +68,11 @@ function Feedback() {
                 setSubBut("Submit")
             },2000)
         }
+        if(subBut === "Processing...") {
+            setTimeout(() => {
+                setSubBut("Submitted")
+            }, 5000)
+        }
     },[subBut])
 
     return (
