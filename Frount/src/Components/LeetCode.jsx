@@ -49,6 +49,22 @@ function LeetCode() {
             <p className='rankc'>{stats?.hardSolved}</p>
             <p className='totalc'>/{stats?.totalHard}</p>
           </div>
+        {/* <div className="leet_stats">
+          <div className="leet_card easy">
+            <p className='head'>Easy</p>
+            <p className='rankc'>13</p>
+            <p className='totalc'>/915</p>
+          </div>
+          <div className="leet_card medium">
+            <p className='head'>Medium</p>
+            <p className='rankc'>26</p>
+            <p className='totalc'>/1960</p>
+          </div>
+          <div className="leet_card hard">
+            <p className='head'>Hard</p>
+            <p className='rankc'>10</p>
+            <p className='totalc'>/889</p>
+          </div> */}
         </div>
       </div>
       <div className='leetCont'>

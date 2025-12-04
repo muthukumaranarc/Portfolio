@@ -292,20 +292,22 @@
         height: 55px;
         border: 2px solid rgba(150, 150, 150, 0.253);
     }
-
+    
     .leet_card>.head {
+        /* border:1px solid red; */
         position: relative;
         margin-top: -4px;
         margin-bottom: -5px;
         font-weight: bold;
         font-size: 12px;
+        height: 20px;
     }
 
     .leet_card>.rankc {
         color: white;
         margin-top: 5px;
         position: relative;
-        right: 12px;
+        right: 5px;
         top: 1px;
         font-size: 20px;
         font-weight: bold;
