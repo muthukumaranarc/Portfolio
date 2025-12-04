@@ -1,5 +1,4 @@
 body {
-  background: rgba(235, 235, 235, 1);
   font-family: 'Poppins', sans-serif;
   overflow-y: hidden;
 }
@@ -26,34 +25,30 @@ body {
 
 .upHome {
   height: 50px;
-  width: 100px;
-  background-color: rgb(235, 235, 235);
+  width: 50px;
+  background-color: white;
   position: fixed;
-  right: -20px;
-  bottom: 100px;
-  border: 2px solid rgba(185, 181, 181, 0.425);
-  border-radius: 50px 0 0 50px;
+  right: -60px;
+  bottom: 40px;
+  border-radius: 50%;
   transition: all 0.3s ease;
   z-index: 10;
-  padding: 5px 0 0 15px;
-  box-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px rgba(12, 45, 42, 0.507);
   opacity: 0;
   transform: translateX(70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .upHome.show {
   opacity: 1;
-  transform: translateX(10px);
+  transform: translateX(-90px);
 }
 
 .upHome>img {
   height: 35px;
   width: 35px;
-}
-
-.upHome:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px gray;
 }
 
 .reveal {
@@ -64,22 +59,24 @@ body {
 
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
 }
 
 @media(max-width: 768px) {
   .upHome {
-    height: 55px;
-    top: 50px;
+    top: 20px;
     right: -50px;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgba(185, 181, 181, 0);
     transform: translateX(70px);
-    padding: 8px 0 0 15px;
+    height: 40px;
+    width: 40px;
+  }
+
+  .upHome > img {
+    height: 30px;
+    width: 30px;
   }
 
   .upHome.show {
     opacity: 1;
-    transform: translateX(-20px);
+    transform: translateX(-70px);
   }
 }

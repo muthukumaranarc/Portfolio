@@ -1,82 +1,73 @@
+.head {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(111, 146, 140, 0.411);
+    background-color: white;
+    /* border: 1px solid red; */
+    padding-bottom: 5px;
+}
+
+.headad {
+    position: absolute;
+    top: -10px;
+    z-index: 10;
+}
+
 .main {
     width: 190px;
     height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    top: 60px;
-    left: 80px;
-    margin-top: -5px;
-    margin-bottom: 5px;
-    /* border: 2px solid red; */
+    margin-left: 40px;
+
 }
 
 .logo {
     width: 40px;
     height: 25px;
     border-radius: 15px;
-    background-color: rgba(235, 235, 235, 1);
+    background-color: rgb(255, 255, 255);
     margin: 2px;
-    border: 5px solid rgba(59, 75, 171, 1);
+    border: 5px solid rgba(12, 45, 42, 1);
 }
 
 h1 {
-    color: rgba(59, 75, 171, 1);
+    color: rgba(12, 45, 42, 1);
     font-size: 23px;
     font-weight: bold;
     margin: 8px;
 }
 
 .nav {
-    position: relative;
-    top: 20px;
-    left: 22vw;
-    width: 570px;
+    width: 600px;
     margin: 0 auto;
     z-index: 4;
+    margin-right: 50px;
 }
 
 .nav>a {
     text-decoration: none;
     font-size: 18px;
-    font-weight: 600;
-    color: rgba(59, 75, 171, 1);
+    font-weight: bold;
+    color: rgba(12, 45, 42, 1);
     padding: 11px;
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
 .nav>a:hover {
-    transform: scale(1.12);
-    color: rgb(48, 62, 138);
-}
-
-.menu-btn {
-    display: none;
-    width: 35px;
-    height: 35px;
-    position: relative;
-    bottom: 8px;
-    left: 84vw;
-    cursor: pointer;
-    z-index: 10;
+    transform: scale(1.05);
+    color: rgba(12, 45, 42, 1)
+;
 }
 
 @media (max-width: 768px) {
     .main {
-        width: 160px;
-        top: 20px;
-        left: 10px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        /* border: 2px solid red; */
+        display: none;
     }
-
-    .menu-btn {
-        display: block;
-    }
-
+    
     .logo {
         width: 30px;
         height: 20px;
@@ -86,47 +77,22 @@ h1 {
     h1 {
         font-size: 18px;
     }
-
+    
     .nav {
-        position: absolute;
-        top: 60px;
-        left: 50vw;
-        width: 40vw;
-        background: rgb(255, 255, 255);
+        /* border: 1px solid red; */
+        width: 99%;
+        margin: 0 auto;
         display: flex;
+        padding: 0;
         justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 2px;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-        transition: all 0.4s ease;
-        z-index: 4;
-        opacity: 0;
-        transform: translateX(70px);
-    }
-
-    .nav.show {
-        opacity: 1;
-        transform: translateX(20px);
     }
 
     .nav>a {
-        font-size: 17px;
-        padding: 10px 15px;
-        margin: 2px 0;
-        width: 35vw;
-        text-align: left;
-        background-color: white;
-        border: 1px solid gray;
-        border-radius: 8px;
-        z-index: 4;
-    }
-
-    .nav>a:hover {
-        transform: none;
-        color: rgba(59, 75, 171, 1);
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 0px;
+        padding: 5px;
+        /* border: 1px solid red; */
     }
 
     .tuch {

@@ -1,11 +1,11 @@
 .ProjBlock {
     width: 388px;
     height: 500px;
-    background-color: rgba(220, 222, 228, 0.562);
+    background-color: rgba(215, 221, 221, 0.61);
     border-radius: 15px;
     margin: 15px;
     border: 1px solid rgba(220, 222, 228, 1);
-    box-shadow: 2px 3px 10px rgba(36, 56, 114, 0.486);
+    box-shadow: 2px 3px 10px rgb(141, 141, 141);
     transition: all 0.3s ease;
 }
 
@@ -34,9 +34,11 @@
     height: 180px;
     background-color: white;
     margin: 0 auto;
+    /* margin-top: 5px; */
     bottom: 55px;
-    border: 1px solid gray;
     border-radius: 10px;
+    border: 1px solid rgb(111, 146, 140);
+    box-shadow: 0px 0px 10px rgba(111, 146, 140, 0.363);
 }
 
 .lan {
@@ -47,28 +49,28 @@
 }
 
 .lanBlock {
+    background-color: rgb(255, 255, 255);
     height: 25px;
-    /* width: 100px; */
     padding-left: 10px;
     padding-right: 10px;
     margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(0, 22, 146, 0.685);
+    /* box-shadow: 0px 0px 5px rgb(255, 255, 255); */
+    border: 1px solid rgba(0, 0, 0, 0.671);
     border-radius: 20px;
-    color: rgba(0, 22, 146, 0.74);
+    color: rgb(0, 0, 0);
     font-size: 14px;
 }
 
 .def {
     width: 320px;
     font-size: 13px;
-    font-weight: 700;
     position: relative;
     bottom: 55px;
     left: 20px;
-    color: rgba(63, 70, 111, 1);
+    color: black;
 }
 
 .ProjBlock>button {

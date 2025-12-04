@@ -1,12 +1,9 @@
 import './Head.css';
-import menu from '../assets/menu_icon.png';
-import {  useState } from 'react';
 
 function Head() {
-    const [open, setOpen] = useState(false);
     return (
         <div className='head'>
-            <div style={{position:'relative', bottom:"20px"}}>
+            <div className='headad'>
                 <section id='home'></section>
             </div>
 
@@ -15,14 +12,7 @@ function Head() {
                 <h1>Hi, there</h1>
             </div>
 
-            <img 
-                src={menu} 
-                alt="menu" 
-                className="menu-btn" 
-                onClick={() => setOpen(!open)} 
-            />
-
-            <div className={`nav ${open ? "show" : ""}`} id="nav" onClick={() => {setTimeout(() => (setOpen(false)), 500) }}>
+            <div className={`nav`}>
                 <a href="#skills">Skills</a>
                 <a href="#journey">Journey</a>
                 <a href="#visonary">Visionary</a>

@@ -1,49 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .pro {
-    margin-top: 10px;
-    height: 650px;
+    height: 600px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1),rgba(215, 239, 235, 0.479), rgba(215, 239, 235, 1));
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    height: 320px;
+    width: 600px;
+    margin-left: 100px;
 }
 
 .Name {
-    position: relative;
-    top: 120px;
-    left: 130px;
-    color: rgba(0, 21, 146, 1);
+    color: rgba(12, 45, 42, 1);
     font-weight: bold;
     font-size: 40px;
     line-height: 1.2;
     z-index: 2;
 }
 
-.im {
-    position: relative;
-    top: 90px;
-    left: 130px;
-    color: rgba(0, 21, 146, 1);
-    font-weight: bold;
-    font-size: 33px;
-    z-index: 2;
-}
-
 .glow {
-    position: relative;
-    top: 13px;
-    left: 220px;
-    color: rgba(0, 21, 146, 1);
+    color: rgba(12, 45, 42, 1);
     font-weight: bold;
     font-size: 34px;
     line-height: 1.2;
-    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 5px rgba(67, 95, 255, 1), 0 0 10px rgba(67, 95, 255, 1);
     z-index: 2;
-    width: 450px;
+    width: 470px;
 }
 
 .quickAbout {
-    position: relative;
-    top: 20px;
-    left: 130px;
-    color: rgba(0, 21, 146, 0.77);
+    color: rgba(12, 45, 42, 0.678);
     font-weight: bold;
     font-size: 16px;
     line-height: 1.2;
@@ -53,8 +46,7 @@
 
 .CheckResume {
     position: relative;
-    top: 50px;
-    left: 130px;
+    top: 30px;
     width: 280px;
     height: 55px;
     border-radius: 15px;
@@ -66,10 +58,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(235, 235, 235, 1);
     z-index: 0;
     transition: transform 0.3s ease;
-    box-shadow: 0px 0px 10px #9D06FF;
     transition: all 0.3s ease;
     z-index: 2;
 }
@@ -86,7 +76,13 @@
     inset: 0;
     padding: 4px;
     border-radius: inherit;
-    background-image: conic-gradient(from var(--angle), #C226FF, #9D06FF, #0025FF, #C226FF);
+    background-image: conic-gradient(
+        from var(--angle),
+        rgba(142, 168, 166, 1) 0%,
+        rgba(40, 80, 76, 1) 50%,
+        rgba(142, 168, 166, 1) 100% 
+    );
+
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
@@ -103,24 +99,24 @@
 }
 
 .CheckResume:hover {
-    transform: scale(1.05);
-    box-shadow: 2px 1px 15px #9D06FF;
+    transform: scale(1.02);
+    box-shadow: 0px 0px 10px rgba(12, 45, 42, 0.705);
     cursor: pointer;
 }
 
-.hi {
-    position: absolute;
-    display: block;
-    height: 150px;
-    width: 150px;
-    top: 100px;
-    right: 90px;
-    opacity: 0;
-    transition: all 0.09s ease-out;
+.my-image {
+    display: flex;
+    margin-top: 5px;
 }
 
-.hi.active {
-    opacity: 1;
+.hi {
+    position: relative;
+    display: block;
+    height: 135px;
+    width: 135px;
+    bottom: 55px;
+    right: 5px;
+    transition: all 0.09s ease-out;
 }
 
 .Prof_img {
@@ -128,27 +124,24 @@
     height: 290px;
     background-color: rgba(128, 146, 255, 1);
     border-radius: 50%;
-    position: relative;
-    bottom: 235px;
-    left: 65vw;
     box-shadow: 0 0 25px rgba(67, 95, 255, 1), 0 0 7px rgba(67, 95, 255, 1);
 }
 
 .muthu {
     display: block;
     position: relative;
-    bottom: 330px;
-    left: 60vw;
+    left: 150px;
+    bottom: 15px;
     height: 430px;
     width: 430px;
     transition: all 0.3s ease;
-    filter: drop-shadow(0 0 5px #4c5aae);
+    filter: drop-shadow(0 0 5px #7c7c81);
     z-index: 1;
 }
 
 .muthu:hover {
     transform: scale(1.01);
-    filter: drop-shadow(0 0 7px #4c5aae);
+    filter: drop-shadow(0 0 7px #494949);
 }
 
 @keyframes fadeIn {
@@ -165,55 +158,55 @@
 
 
 @media (max-width: 768px) {
+
+    .pro {
+        height: 800px;
+        margin-bottom: 0px;
+    }
+
     .muthu {
-        position: relative;
-        top: -275px;
-        left: 0px;
-        height: 85vw;
-        width: 85vw;
+        display: block;
+        position: absolute;
+        top: 110px;
+        left: 12vw;
         margin: 0 auto;
-        z-index: 1;
-        filter: drop-shadow(0 0 10px #4c5aae);
-        /* border: 2px solid red; */
+        height: 76vw;
+        width: 76vw;
+        z-index: 10;
+    }
+
+    .cont {
+        margin-top: calc(76vw + 40px);
+        right: 60px;
     }
 
     .hi {
+        position: absolute;
         height: 100px;
         width: 100px;
-        top: 60px;
-        right: 70px;
+        top: 70px;
+        right: 65px;
         z-index: 2;
     }
 
     .Name {
-        top: 430px;
+        top: 450px;
         left: 30px;
         font-size: 25px;
     }
 
-    .im {
-        top: 411px;
-        left: 30px;
-        font-size: 22px;
-    }
-
     .glow {
-        top: 360px;
-        left: 95px;
-        font-size: 22px;
-        width: 300px;
+        font-size: 25px;
+        width: 340px;
     }
 
     .quickAbout {
-        top: 370px;
-        left: 30px;
         font-size: 15px;
         width: 355px;
     }
 
     .CheckResume {
-        top: 400px;
-        left: 30px;
+        top: 30px;
         width: 220px;
         height: 50px;
         font-size: 18px;

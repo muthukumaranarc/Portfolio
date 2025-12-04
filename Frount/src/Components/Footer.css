@@ -36,9 +36,10 @@
     font-size: 15px;
     position: relative;
     top: 65px;
-    width: 380px;
+    /* width: 380px; */
     text-align: center;
     margin: 0 auto;
+    margin-top: 10px;
 }
 
 .contact {
@@ -48,7 +49,7 @@
     top: 50px;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 30px;
 
 }
 
@@ -90,7 +91,7 @@
 @media(max-width: 768px) {
     .foot {
         height: 200px;
-        max-width: 800px;
+        width: 100vw;
         /* border: 2px solid red; */
         top: 0px;
     }

@@ -1,6 +1,5 @@
 import gmailIcon from "../assets/Gmail.png";
 import linkedIcon from "../assets/LinkedIn.png";
-import instaIcon from "../assets/Instagram.png";
 import whatsIcon from "../assets/WhhatsApp.png";
 import callIcon from "../assets/Call.png";
 import gitIcon from "../assets/contGit.png";
@@ -39,15 +38,6 @@ function Footer() {
 
                     <div>
                         <a
-                            href="https://www.instagram.com/m.muthukumaran_55/"
-                            target="_blank"
-                        >
-                            <img src={instaIcon} alt="Instagram" className="icon" />
-                        </a>
-                    </div>
-
-                    <div>
-                        <a
                             href="https://api.whatsapp.com/send?phone=8610760407&text=Hi%20Muthukumaran%2C%20I%20saw%20your%20portfolio"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -58,7 +48,7 @@ function Footer() {
 
                     <div>
                         <a href="tel:8610760407" target="_blank">
-                            <img src={callIcon} alt="Call" className="icon" />
+                            <img src={callIcon} alt="Call" className="icon" style={{transform:"rotate(0deg)"}}/>
                         </a>
                     </div>
 
@@ -68,8 +58,7 @@ function Footer() {
                         </a>
                     </div>
                 </div>
-                <div className='thank'>Thank you for spending your valuable time for me,
-                    I hope you may like my effort. </div>
+                <div className='thank'>Thank you for spending your valuable time for me, I hope you may like my effort. </div>
             </div>
         </>
     );

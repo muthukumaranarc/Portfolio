@@ -9,6 +9,7 @@ function LeetCode() {
 
   useEffect(() => {
     fetch("https://muthu-portfolio-gfq8.onrender.com/leetcode")
+    // fetch("http://localhost:8080/leetcode")
       .then((res) => res.json())
       .then((data) => setStats(data));
   }, []);
