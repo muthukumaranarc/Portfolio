@@ -8,6 +8,7 @@ import Visionary from './Components/Visionary'
 import Projects from './Components/Projects'
 import Feedback from './Components/Feedback'
 import Footer from './Components/Footer'
+import ScrollExperience3D from './Components/ScrollExperience3D'
 import { useEffect } from "react";
 import arrow from './assets/Arrow.png'
 import { useState } from "react";
@@ -78,6 +79,7 @@ function App() {
       <a href="#home" className={`upHome ${showButton ? "show" : ""}`}>
         <img src={arrow} alt="arrow" />
       </a>
+      <ScrollExperience3D />
       <Head />
       <Profile />
       <Skills />

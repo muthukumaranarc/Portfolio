@@ -1,0 +1,132 @@
+.scrollExperience {
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+  width: 100vw;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(82, 230, 255, 0.18), transparent 32%),
+    linear-gradient(135deg, #02040d 0%, #071225 48%, #030611 100%);
+}
+
+.scrollExperience::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 68px 68px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 76%);
+}
+
+.scrollExperienceCanvas {
+  position: fixed !important;
+  inset: 0;
+  height: 100vh !important;
+  width: 100vw !important;
+  z-index: 0;
+}
+
+.scrollExperienceOverlay {
+  width: 100vw;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.scrollExperienceSection {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: clamp(5rem, 10vw, 8rem);
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition: opacity 0.18s linear, transform 0.18s linear;
+  will-change: opacity, transform;
+}
+
+.scrollExperienceSection--left {
+  justify-content: flex-start;
+}
+
+.scrollExperienceSection--right {
+  justify-content: flex-end;
+}
+
+.scrollExperienceCard {
+  max-width: 500px;
+  padding: clamp(1.35rem, 3vw, 2.2rem);
+  border: 1px solid rgba(160, 242, 255, 0.22);
+  border-radius: 28px;
+  background: rgba(5, 10, 24, 0.48);
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  pointer-events: auto;
+}
+
+.scrollExperienceCard span {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: #93f9ff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.scrollExperienceCard h1 {
+  margin: 0;
+  color: #f8fdff;
+  font-size: clamp(2.2rem, 5vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.scrollExperienceCard p {
+  margin: 1.25rem 0 0;
+  color: rgba(235, 250, 255, 0.78);
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.scrollExperienceCard a {
+  display: inline-flex;
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  color: #03101c;
+  background: linear-gradient(135deg, #93f9ff, #ffffff);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(117, 237, 255, 0.28);
+}
+
+@media (max-width: 768px) {
+  .scrollExperience {
+    min-height: 620px;
+  }
+
+  .scrollExperienceSection {
+    align-items: flex-end;
+    justify-content: center;
+    padding: 2rem 1rem 5.5rem;
+  }
+
+  .scrollExperienceSection--right {
+    justify-content: center;
+  }
+
+  .scrollExperienceCard {
+    max-width: min(100%, 440px);
+    border-radius: 22px;
+    text-align: left;
+  }
+
+  .scrollExperienceCard h1 {
+    font-size: clamp(2rem, 12vw, 3.4rem);
+  }
+}
