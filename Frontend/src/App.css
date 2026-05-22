@@ -147,6 +147,19 @@ body {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* ===== ScrollVelocity Component ===== */
+.scroll-velocity-text {
+  color: var(--primary);
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: -0.03em;
+  opacity: 0.7;
+}
+
+.scroll-velocity-text:nth-child(even) {
+  color: var(--primary-container);
+  opacity: 0.5;
+}
+
 /* ===== Scroll to top button ===== */
 .scroll-top-btn {
   position: fixed;

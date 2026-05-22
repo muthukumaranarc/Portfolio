@@ -121,7 +121,7 @@ function Stats() {
         )}
 
         {/* Skills Grid */}
-        <div className="skills-grid reveal">
+        <div className="skills-grid reveal" id="stack">
           <h3 className="skills-title">My <span style={{ color: 'var(--tertiary)' }}>Skills</span></h3>
           <div className="skills-icons-grid">
             {skills.map((skill, i) => (

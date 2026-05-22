@@ -2,6 +2,7 @@ import './App.css';
 import ClickSpark from './Components/ClickSpark';
 import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
+import ScrollVelocity from './Components/ScrollVelocity';
 import About from './Components/About';
 import Expertise from './Components/Expertise';
 import Stats from './Components/Stats';
@@ -17,6 +18,7 @@ import Lenis from 'lenis';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -36,10 +38,52 @@ function App() {
 
     rafId = requestAnimationFrame(raf);
 
+    // Smooth scroll for anchor links
+    const handleAnchorClick = (e) => {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (anchor) {
+        const targetId = anchor.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          lenis.scrollTo(targetElement, { offset: -100 });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+
     return () => {
       cancelAnimationFrame(rafId);
+      document.removeEventListener('click', handleAnchorClick);
       lenis.destroy();
     };
+  }, []);
+
+  // IntersectionObserver for tracking active section
+  useEffect(() => {
+    const sectionIds = ['hero', 'stack', 'about', 'projects', 'journey', 'contact'];
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -50% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -101,8 +145,18 @@ function App() {
       easing="ease-out"
       extraScale={1.15}
     >
-      <Navbar />
+      <Navbar activeSection={activeSection} />
       <Hero />
+      {/* <ScrollVelocity
+        texts={[
+          "Full Stack Developer",
+          "DevOps Enthusiast",
+          "Innovative Solutions",
+          "Building the Future"
+        ]}
+        velocity={80}
+        className="scroll-velocity-text"
+      /> */}
       <Stats />
       {/* <TechStack /> */}
       <About />
@@ -112,7 +166,7 @@ function App() {
       <Accolades />
       <Contact />
       <SiteFooter />
-      <MobileNav />
+      <MobileNav activeSection={activeSection} />
       <button
         className={`scroll-top-btn ${showScrollTop ? 'show' : ''}`}
         onClick={scrollToTop}
