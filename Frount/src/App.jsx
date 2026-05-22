@@ -1,93 +1,126 @@
 import './App.css';
-import Head from './Components/Head'
-import Profile from './Components/Profile'
-import Skills from './Components/Skills'
-import Journey from './Components/Journey'
-import LeetCode from './Components/LeetCode'
-import Visionary from './Components/Visionary'
-import Projects from './Components/Projects'
-import Feedback from './Components/Feedback'
-import Footer from './Components/Footer'
-import { useEffect } from "react";
-import arrow from './assets/Arrow.png'
-import { useState } from "react";
-
-const loader = document.getElementById('loader');
-if (loader) {
-  loader.style.display = 'none';
-}
-
-
+import ClickSpark from './Components/ClickSpark';
+import Navbar from './Components/Navbar';
+import Hero from './Components/Hero';
+import About from './Components/About';
+import Expertise from './Components/Expertise';
+import Stats from './Components/Stats';
+import TechStack from './Components/TechStack';
+import GithubProjects from './Components/GithubProjects';
+import DevOpsJourney from './Components/DevOpsJourney';
+import Accolades from './Components/Accolades';
+import Contact from './Components/Contact';
+import SiteFooter from './Components/SiteFooter';
+import MobileNav from './Components/MobileNav';
+import { useEffect, useState } from 'react';
+import Lenis from 'lenis';
 
 function App() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    // Disable zoom with Ctrl + scroll
-    const handleWheel = (e) => {
-      if (e.ctrlKey) {
-        e.preventDefault();
-      }
-    };
+    const lenis = new Lenis({
+      duration: 1.1,
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
+      infinite: false
+    });
 
-    // Disable zoom with pinch on mobile
-    const handleTouchMove = (e) => {
-      if (e.touches.length > 1) {
-        e.preventDefault();
-      }
-    };
+    let rafId;
 
-    // Disable zoom with keyboard shortcuts (Ctrl + + / -)
-    const handleKeyDown = (e) => {
-      if (
-        (e.ctrlKey || e.metaKey) &&
-        (e.key === "+" || e.key === "-" || e.key === "=")
-      ) {
-        e.preventDefault();
-      }
-    };
+    function raf(time) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("touchmove", handleTouchMove, { passive: false });
-    window.addEventListener("keydown", handleKeyDown);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("keydown", handleKeyDown);
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
     };
   }, []);
-
-  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 600) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
+    // Scroll reveal observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Scroll to top button
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 600);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
+  // Re-observe new .reveal elements after render
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.reveal:not(.active)').forEach(el => observer.observe(el));
+    }, 100);
+    return () => clearTimeout(timeout);
+  });
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <>
-      <a href="#home" className={`upHome ${showButton ? "show" : ""}`}>
-        <img src={arrow} alt="arrow" />
-      </a>
-      <Head />
-      <Profile />
-      <Skills />
-      <Journey />
-      <LeetCode />
-      <Visionary />
-      <Projects />
-      <Feedback />
-      <Footer />
-    </>
+    <ClickSpark
+      sparkColor="var(--primary)"
+      sparkSize={12}
+      sparkRadius={18}
+      sparkCount={8}
+      duration={420}
+      easing="ease-out"
+      extraScale={1.15}
+    >
+      <Navbar />
+      <Hero />
+      <Stats />
+      {/* <TechStack /> */}
+      <About />
+      <Expertise />
+      <GithubProjects />
+      <DevOpsJourney />
+      <Accolades />
+      <Contact />
+      <SiteFooter />
+      <MobileNav />
+      <button
+        className={`scroll-top-btn ${showScrollTop ? 'show' : ''}`}
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
+        <span className="material-symbols-outlined">arrow_upward</span>
+      </button>
+    </ClickSpark>
   );
 }
 

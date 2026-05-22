@@ -1,0 +1,90 @@
+.tech-section {
+  padding: 6rem 0;
+  background-color: var(--surface-container-low);
+  overflow: hidden;
+}
+
+.tech-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.tech-title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--on-surface);
+  text-align: center;
+  margin-bottom: 4rem;
+  font-family: 'Manrope', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .tech-title {
+    font-size: 3rem;
+  }
+}
+
+.tech-accent {
+  color: var(--primary);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tech-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.tech-card {
+  background: var(--surface-container);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(80, 68, 49, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-icon {
+  font-size: 2.5rem;
+  color: var(--on-surface-variant);
+  transition: color 0.3s;
+}
+
+.tech-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--on-surface-variant);
+  transition: color 0.3s;
+}
+
+/* Hover effects */
+.tech-hover-amber-500:hover { color: #f59e0b !important; }
+.tech-hover-tertiary:hover { color: var(--tertiary) !important; }
+.tech-hover-primary:hover { color: var(--primary) !important; }
+.tech-hover-indigo-400:hover { color: #818cf8 !important; }
+.tech-hover-blue-400:hover { color: #60a5fa !important; }
+
+/* Group hover states handled by JS classes via Template literals in component */
+.group:hover .group-hover\:text-amber-500 { color: #f59e0b; }
+.group:hover .group-hover\:text-tertiary { color: var(--tertiary); }
+.group:hover .group-hover\:text-primary { color: var(--primary); }
+.group:hover .group-hover\:text-indigo-400 { color: #818cf8; }
+.group:hover .group-hover\:text-blue-400 { color: #60a5fa; }

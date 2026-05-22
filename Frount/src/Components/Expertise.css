@@ -1,0 +1,61 @@
+.expertise-section {
+  background: var(--surface-container-lowest);
+  padding: 0 0 6rem;
+}
+
+.expertise-container {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 0 2rem;
+}
+
+.expertise-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.expertise-card {
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.expertise-icon {
+  align-items: center;
+  border-radius: 0.75rem;
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s;
+  width: 3rem;
+}
+
+.expertise-card:hover .expertise-icon {
+  transform: scale(1.1);
+}
+
+.expertise-title {
+  color: var(--on-surface);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.expertise-desc {
+  color: #6b6254;
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+@media (min-width: 640px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .expertise-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

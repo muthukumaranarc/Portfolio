@@ -1,0 +1,432 @@
+.gh-projects-section {
+  padding: 6rem 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(243, 239, 230, 0) 18%),
+    #f3efe6;
+}
+
+.gh-projects-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header inherited from FeaturedWork / typical styling */
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.work-title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #20342e;
+  margin-bottom: 1rem;
+  font-family: 'Manrope', sans-serif;
+}
+
+.work-subtitle {
+  color: #6b6254;
+  max-width: 28rem;
+  line-height: 1.6;
+}
+
+.work-archive-link {
+  display: none;
+  background: none;
+  border: none;
+  color: #2f6b57;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .work-archive-link {
+    display: block;
+  }
+}
+
+.work-archive-link:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+/* Loading Skeleton Grid */
+.gh-loading-grid,
+.gh-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .gh-loading-grid,
+  .gh-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gh-loading-grid,
+  .gh-projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Skeletons */
+.gh-skeleton-card {
+  background: #fffaf1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(81, 70, 54, 0.13);
+}
+
+.gh-skeleton-img {
+  height: 12rem;
+  background: #e3dacb;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.gh-skeleton-content {
+  padding: 1.5rem;
+}
+
+.gh-skeleton-line {
+  height: 1rem;
+  background: #e3dacb;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.gh-skeleton-line.title {
+  height: 1.5rem;
+  width: 70%;
+  margin-bottom: 1rem;
+}
+
+.gh-skeleton-line.short {
+  width: 40%;
+}
+
+/* Real Cards */
+.gh-card {
+  background: rgba(255, 250, 241, 0.86);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(81, 70, 54, 0.13);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1rem 2.5rem rgba(78, 66, 47, 0.08);
+}
+
+.gh-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(47, 107, 87, 0.32);
+  box-shadow: 0 1.5rem 2.8rem rgba(78, 66, 47, 0.16);
+}
+
+.gh-card-img-wrap {
+  height: 12rem;
+  overflow: hidden;
+  background: #ded4c3;
+  width: 100%;
+}
+
+.gh-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gh-card:hover .gh-card-img {
+  transform: scale(1.05);
+}
+
+.gh-card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gh-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #20342e;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.gh-card-desc {
+  color: #6b6254;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gh-card-topics {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.gh-topic-tag {
+  background: rgba(47, 107, 87, 0.11);
+  color: #2f6b57;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.gh-error {
+  text-align: center;
+  padding: 3rem;
+  color: #9f312a;
+  background: rgba(159, 49, 42, 0.08);
+  border-radius: 0.5rem;
+}
+
+/* Modal Overlay */
+.gh-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.gh-modal-content {
+  background: var(--surface-container);
+  width: 100%;
+  max-width: 50rem;
+  max-height: 90vh;
+  border-radius: 1rem;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+  border: 1px solid rgba(192, 193, 255, 0.2);
+}
+
+.gh-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.gh-modal-close:hover {
+  background: rgba(239, 68, 68, 0.8);
+}
+
+.gh-modal-img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  background: var(--surface-container-high);
+}
+
+.gh-modal-title-area {
+  padding: 2rem;
+  background: var(--surface-container-low);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gh-modal-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.gh-modal-desc {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.gh-modal-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gh-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(to right, var(--primary-container), var(--primary));
+  color: var(--on-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.gh-btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(192, 193, 255, 0.3);
+}
+
+.gh-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.gh-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.gh-modal-body {
+  padding: 2rem;
+}
+
+.gh-readme-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gh-readme-title::before {
+  content: 'description';
+  font-family: 'Material Symbols Outlined';
+  color: var(--tertiary);
+}
+
+/* Markdown Styles */
+.gh-readme-content {
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.gh-readme-content h1,
+.gh-readme-content h2,
+.gh-readme-content h3 {
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.gh-readme-content h1 { font-size: 1.75rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
+.gh-readme-content h2 { font-size: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
+.gh-readme-content h3 { font-size: 1.25rem; }
+
+.gh-readme-content p { margin-bottom: 1rem; }
+.gh-readme-content ul, .gh-readme-content ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+.gh-readme-content li { margin-bottom: 0.5rem; }
+
+.gh-readme-content a { color: var(--primary); text-decoration: none; }
+.gh-readme-content a:hover { text-decoration: underline; }
+
+.gh-readme-content pre {
+  background: #0f172a;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.gh-readme-content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: rgba(255,255,255,0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+}
+
+.gh-readme-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.gh-readme-content img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.gh-readme-error,
+.gh-readme-loader {
+  text-align: center;
+  padding: 2rem;
+  color: #94a3b8;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Custom Scrollbar for Modal */
+.gh-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.gh-modal-content::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+}
+.gh-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+}
+.gh-modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.3);
+}

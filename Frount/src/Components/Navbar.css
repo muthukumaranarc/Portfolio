@@ -1,0 +1,101 @@
+.site-nav {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 80rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(80, 68, 49, 0.16);
+  background: rgba(255, 250, 241, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 8px 32px 0 rgba(78, 66, 47, 0.13);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  z-index: 50;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--on-surface);
+  letter-spacing: -0.05em;
+  font-family: 'Manrope', sans-serif;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-logo:hover {
+  color: var(--primary);
+}
+
+.nav-logo-accent {
+  transition: color 0.3s;
+}
+
+.nav-logo:hover .nav-logo-accent {
+  color: var(--tertiary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  transition: color 0.3s;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-resume-btn {
+  background: var(--primary-container);
+  color: var(--on-primary);
+  font-weight: 700;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(192, 193, 255, 0.2);
+}
+
+.nav-resume-btn:hover {
+  transform: scale(1.1);
+}
+
+.nav-resume-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .site-nav {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-resume-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}

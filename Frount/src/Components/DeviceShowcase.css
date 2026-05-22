@@ -1,0 +1,269 @@
+.device-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(18rem, 1.18fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin: 0 0 4rem;
+  padding: 2rem;
+  border: 1px solid rgba(80, 68, 49, 0.14);
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(135deg, rgba(47, 107, 87, 0.13), transparent 32%),
+    linear-gradient(225deg, rgba(189, 129, 69, 0.14), transparent 36%),
+    rgba(255, 250, 241, 0.88);
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(78, 66, 47, 0.1);
+}
+
+.device-copy {
+  max-width: 28rem;
+}
+
+.device-kicker {
+  display: inline-block;
+  color: #2f6b57;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.device-copy h3 {
+  color: #20342e;
+  font-size: clamp(1.7rem, 3vw, 2.65rem);
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+
+.device-copy p {
+  color: #6b6254;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.device-stage {
+  position: relative;
+  min-height: 24rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 75rem;
+}
+
+.laptop-device {
+  width: min(100%, 36rem);
+  transform: rotateX(3deg) rotateY(-13deg);
+  animation: laptopFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 1.8rem 2.2rem rgba(75, 61, 41, 0.22));
+}
+
+.laptop-lid {
+  position: relative;
+  padding: 0.65rem;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.65rem 0.65rem 0.4rem 0.4rem;
+  background: linear-gradient(145deg, #3b3a32, #151a17 58%, #101411);
+  border: 1px solid rgba(255, 250, 241, 0.28);
+}
+
+.laptop-camera {
+  position: absolute;
+  top: 0.32rem;
+  left: 50%;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 50%;
+  background: #a69a86;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.laptop-screen,
+.android-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #151a17;
+}
+
+.laptop-screen {
+  border-radius: 0.35rem;
+}
+
+.laptop-base {
+  width: 110%;
+  height: 1.05rem;
+  margin-left: -5%;
+  border-radius: 0.18rem 0.18rem 1.1rem 1.1rem;
+  background: linear-gradient(180deg, #e9dfcf, #a49883 56%, #625944);
+  transform: rotateX(64deg);
+  transform-origin: top;
+}
+
+.screen-track,
+.phone-track {
+  display: flex;
+  height: 100%;
+  animation: showcaseSlide 18s ease-in-out infinite;
+}
+
+.screen-track.is-empty,
+.phone-track.is-empty {
+  animation: none;
+}
+
+.screen-slide,
+.phone-slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.screen-slide img,
+.phone-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.screen-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.55rem;
+  color: #e9dfcf;
+  background:
+    linear-gradient(135deg, rgba(47, 107, 87, 0.28), transparent 40%),
+    repeating-linear-gradient(135deg, rgba(233, 223, 207, 0.08) 0 0.8rem, transparent 0.8rem 1.6rem),
+    #1b211d;
+  text-align: center;
+}
+
+.screen-placeholder strong {
+  font-size: 0.9rem;
+}
+
+.screen-placeholder .material-symbols-outlined {
+  color: #d39b5f;
+  font-size: 2rem;
+}
+
+.android-phone {
+  position: absolute;
+  right: 2%;
+  bottom: 0.45rem;
+  width: min(30vw, 10.6rem);
+  min-width: 8.4rem;
+  aspect-ratio: 9 / 19;
+  padding: 0.75rem 0.45rem 0.9rem;
+  border-radius: 1.7rem;
+  background: linear-gradient(145deg, #30382f, #0f1511 62%, #1a211b);
+  border: 1px solid rgba(255, 250, 241, 0.24);
+  box-shadow: 0 1rem 2.5rem rgba(75, 61, 41, 0.3);
+  animation: phoneFloat 5s ease-in-out infinite;
+}
+
+.android-speaker {
+  width: 2.3rem;
+  height: 0.25rem;
+  margin: 0 auto 0.45rem;
+  border-radius: 999px;
+  background: #a69a86;
+}
+
+.android-screen {
+  border-radius: 1.1rem;
+}
+
+.android-nav {
+  position: absolute;
+  left: 50%;
+  bottom: 0.35rem;
+  display: flex;
+  gap: 0.55rem;
+  transform: translateX(-50%);
+}
+
+.android-nav span {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background: #d8ccb9;
+}
+
+.phone-placeholder strong {
+  max-width: 5rem;
+}
+
+@keyframes showcaseSlide {
+  0%, 23% { transform: translateX(0); }
+  33%, 56% { transform: translateX(-100%); }
+  66%, 89% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes laptopFloat {
+  0%, 100% { transform: translateY(0) rotateX(3deg) rotateY(-13deg); }
+  50% { transform: translateY(-0.8rem) rotateX(4deg) rotateY(-10deg); }
+}
+
+@keyframes phoneFloat {
+  0%, 100% { transform: translateY(0) rotateZ(2deg); }
+  50% { transform: translateY(-1rem) rotateZ(-1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laptop-device,
+  .android-phone,
+  .screen-track,
+  .phone-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .device-showcase {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .device-stage {
+    min-height: 20rem;
+  }
+
+  .android-phone {
+    right: 5%;
+    width: 9rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .device-showcase {
+    padding: 1.15rem;
+    gap: 1.5rem;
+  }
+
+  .device-copy h3 {
+    font-size: 1.65rem;
+  }
+
+  .device-stage {
+    min-height: 16.5rem;
+  }
+
+  .laptop-device {
+    width: 19rem;
+    transform: rotateX(2deg) rotateY(-8deg);
+  }
+
+  .android-phone {
+    right: 0.2rem;
+    width: 7rem;
+    min-width: 7rem;
+  }
+}

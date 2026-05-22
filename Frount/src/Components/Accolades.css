@@ -1,0 +1,67 @@
+.accolades-section {
+  padding: 6rem 0;
+  background-color: var(--surface-dim);
+}
+
+.accolades-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.accolades-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .accolades-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .accolades-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.accolade-card {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  cursor: default;
+}
+
+.accolade-card:hover {
+  background: var(--surface-container-high);
+}
+
+.accolade-icon {
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.accolade-card:hover .accolade-icon {
+  transform: rotate(12deg);
+}
+
+.accolade-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: 0.5rem;
+}
+
+.accolade-desc {
+  font-size: 0.75rem;
+  color: #6b6254;
+  line-height: 1.5;
+}
+
+/* Tailwind-style text colors for Accolades component */
+.text-tertiary { color: var(--tertiary); }
+.text-primary { color: var(--primary); }
+.text-indigo-400 { color: #818cf8; }
+.text-amber-400 { color: #fbbf24; }
