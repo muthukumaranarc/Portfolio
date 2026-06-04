@@ -2,7 +2,7 @@ import { useInView, useMotionValue, useSpring } from 'motion/react';
 import { useCallback, useEffect, useRef } from 'react';
 
 export default function CountUp({
-  to,
+  to = 0,
   from = 0,
   direction = 'up',
   delay = 0,
@@ -27,6 +27,7 @@ export default function CountUp({
   const isInView = useInView(ref, { once: true, margin: '0px' });
 
   const getDecimalPlaces = num => {
+    if (num === undefined || num === null) return 0;
     const str = num.toString();
 
     if (str.includes('.')) {

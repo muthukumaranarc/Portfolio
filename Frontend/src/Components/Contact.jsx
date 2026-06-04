@@ -178,7 +178,7 @@ function Contact() {
 
           <button 
             type="submit" 
-            className="submit-btn magnetic-btn" 
+            className="submit-btn" 
             disabled={isDisabled}
           >
             {status}

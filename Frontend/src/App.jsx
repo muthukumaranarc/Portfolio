@@ -2,11 +2,9 @@ import './App.css';
 import ClickSpark from './Components/ClickSpark';
 import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
-import ScrollVelocity from './Components/ScrollVelocity';
 import About from './Components/About';
 import Expertise from './Components/Expertise';
 import Stats from './Components/Stats';
-import TechStack from './Components/TechStack';
 import GithubProjects from './Components/GithubProjects';
 import DevOpsJourney from './Components/DevOpsJourney';
 import Accolades from './Components/Accolades';
@@ -17,7 +15,6 @@ import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 
 function App() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
@@ -103,15 +100,8 @@ function App() {
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Scroll to top button
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 600);
-    };
-    window.addEventListener('scroll', handleScroll);
-
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -131,10 +121,6 @@ function App() {
     return () => clearTimeout(timeout);
   });
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <ClickSpark
       sparkColor="var(--primary)"
@@ -147,18 +133,7 @@ function App() {
     >
       <Navbar activeSection={activeSection} />
       <Hero />
-      {/* <ScrollVelocity
-        texts={[
-          "Full Stack Developer",
-          "DevOps Enthusiast",
-          "Innovative Solutions",
-          "Building the Future"
-        ]}
-        velocity={80}
-        className="scroll-velocity-text"
-      /> */}
       <Stats />
-      {/* <TechStack /> */}
       <About />
       <Expertise />
       <GithubProjects />
@@ -167,13 +142,6 @@ function App() {
       <Contact />
       <SiteFooter />
       <MobileNav activeSection={activeSection} />
-      <button
-        className={`scroll-top-btn ${showScrollTop ? 'show' : ''}`}
-        onClick={scrollToTop}
-        aria-label="Scroll to top"
-      >
-        <span className="material-symbols-outlined">arrow_upward</span>
-      </button>
     </ClickSpark>
   );
 }

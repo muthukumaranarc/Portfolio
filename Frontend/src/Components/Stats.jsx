@@ -10,7 +10,7 @@ import ReactJS from '../assets/ReactJS.png';
 import Java from '../assets/Java.png';
 import NodeJS from '../assets/NodeJS.png';
 import SpringBoot from '../assets/Spring.png';
-import MongoDB from '../assets/MongoDB.png';
+import MongoDB from '../assets/mongoDB.png';
 import MySQL from '../assets/MySQL.png';
 import Figma from '../assets/Figma.png';
 import Maven from '../assets/Maven.png';

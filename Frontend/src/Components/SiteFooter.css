@@ -1,56 +1,188 @@
 .site-footer {
-  background-color: #eee5d7;
-  border-top: 1px solid rgba(80, 68, 49, 0.12);
-  padding: 3rem 0;
+  background-color: var(--surface-container-low);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0 2rem;
+}
+
+.footer-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(47, 107, 87, 0.04) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 50%, rgba(211, 155, 95, 0.04) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .footer-container {
-  max-width: 80rem;
+  max-width: 48rem;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content-wrapper {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  width: 100%;
+  gap: 2rem;
 }
 
-@media (min-width: 768px) {
-  .footer-container {
-    flex-direction: row;
-  }
-}
-
-.footer-logo {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--on-surface);
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.footer-logo:hover {
-  color: var(--primary);
-}
-
-.footer-copyright {
-  font-size: 0.875rem;
-  color: #6b6254;
-  font-family: inherit;
-}
-
-.footer-links {
+/* Brand section */
+.footer-brand {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1rem;
 }
 
-.footer-links a {
+.footer-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--background);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-name-group {
+  text-align: left;
+}
+
+.footer-name {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--on-surface);
+}
+
+.footer-tagline {
+  display: block;
+  font-size: 0.8125rem;
   color: var(--on-surface-variant);
-  text-decoration: none;
-  transition: color 0.3s;
-  font-size: 0.95rem;
+  margin-top: 0.125rem;
 }
 
-.footer-links a:hover {
-  color: var(--primary);
+/* Divider */
+.footer-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-divider::before,
+.footer-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--outline-variant), transparent);
+}
+
+.footer-divider-icon {
+  color: var(--primary-container);
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* Quote */
+.footer-quote p {
+  font-size: 0.9375rem;
+  color: var(--on-surface-variant);
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+/* Back to top button */
+.footer-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #D39B5F;
+  /* border: 2px solid #8B5E3C; */
+  border-radius: 9999px;
+  padding: 0.625rem 1.25rem;
+  color: black;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-top-btn:hover {
+  background: #C28A4A;
+  border-color: #6B4423;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(211, 155, 95, 0.3);
+}
+
+.footer-top-btn .material-symbols-outlined {
+  font-size: 1.125rem;
+}
+
+.footer-top-label {
+  font-weight: 500;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  font-size: 0.8125rem;
+  color: var(--on-surface-variant);
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-dot {
+  opacity: 0.4;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-name-group {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .footer-dot {
+    display: none;
+  }
 }
