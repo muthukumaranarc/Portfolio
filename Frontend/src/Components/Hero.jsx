@@ -11,13 +11,13 @@ function Hero() {
       <div className="hero-content">
         {/* Left Side */}
         <div className="hero-left reveal active">
-          <div className="hero-status-badge">
+          {/* <div className="hero-status-badge">
             <span className="status-dot-wrapper">
               <span className="status-dot-ping"></span>
               <span className="status-dot"></span>
             </span>
             Open for opportunities
-          </div>
+          </div> */}
 
           <h1 className="hero-title">
             Muthu<br />

@@ -1,6 +1,0 @@
-com\muthu\sendMail\Collections\MailController.class
-com\muthu\sendMail\Data\UserInput.class
-com\muthu\sendMail\Configuration\CorsConfig.class
-com\muthu\sendMail\Services\MainService.class
-com\muthu\sendMail\SendMailApplication.class
-com\muthu\sendMail\Configuration\CorsConfig$1.class

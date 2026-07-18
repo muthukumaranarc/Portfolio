@@ -1,7 +1,4 @@
 import './Stats.css';
-import { useEffect, useState } from 'react';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
 import CountUp from './CountUp';
 import HTML from '../assets/HTML.png';
 import JavaScript from '../assets/JavaScript.png';
@@ -18,19 +15,11 @@ import Git from '../assets/Git.png';
 import GitHub from '../assets/GitHub.png';
 
 function Stats() {
-  const [leetStats, setLeetStats] = useState(null);
-
-  useEffect(() => {
-    fetch("https://muthu-portfolio-gfq8.onrender.com/leetcode")
-      .then((res) => res.json())
-      .then((data) => setLeetStats(data))
-      .catch(() => {});
-  }, []);
 
   const statCards = [
     { value: 15, suffix: '+', label: 'Projects Built', color: 'var(--on-surface)' },
     { value: 12, suffix: '+', label: 'Technologies', color: 'var(--primary)' },
-    { value: leetStats ? leetStats.totalSolved : 500, suffix: '+', label: 'LeetCode Solved', color: 'var(--tertiary)' },
+    { value: 70, suffix: '+', label: 'LeetCode Solved', color: 'var(--tertiary)' },
     { value: 9.8, suffix: '', label: 'Academic CGPA', color: 'var(--on-surface)' },
   ];
 
@@ -73,52 +62,7 @@ function Stats() {
           ))}
         </div>
 
-        {/* LeetCode Stats */}
-        {leetStats && (
-          <div className="leetcode-section reveal">
-            <div className="leetcode-card">
-              <div className="leetcode-progress">
-                <CircularProgressbar
-                  value={leetStats.totalSolved}
-                  maxValue={leetStats.totalQuestions}
-                  text={`${leetStats.totalSolved}`}
-                  styles={buildStyles({
-                    textColor: 'white',
-                    pathColor: 'var(--primary)',
-                    trailColor: 'rgba(255,255,255,0.1)',
-                    textSize: '1.5rem',
-                  })}
-                />
-              </div>
-              <div className="leetcode-breakdown">
-                <div className="lc-item easy">
-                  <span className="lc-label">Easy</span>
-                  <span className="lc-count">{leetStats.easySolved}<span className="lc-total">/{leetStats.totalEasy}</span></span>
-                </div>
-                <div className="lc-item medium">
-                  <span className="lc-label">Medium</span>
-                  <span className="lc-count">{leetStats.mediumSolved}<span className="lc-total">/{leetStats.totalMedium}</span></span>
-                </div>
-                <div className="lc-item hard">
-                  <span className="lc-label">Hard</span>
-                  <span className="lc-count">{leetStats.hardSolved}<span className="lc-total">/{leetStats.totalHard}</span></span>
-                </div>
-              </div>
-            </div>
-            <div className="leetcode-info">
-              <p>Solved <strong>{leetStats.totalSolved}</strong> problems on LeetCode using Java and JavaScript to strengthen DSA and core concepts.</p>
-              <a
-                href="https://leetcode.com/u/Jq4H1BglTL/"
-                target="_blank"
-                rel="noreferrer"
-                className="leetcode-link magnetic-btn"
-              >
-                Check Profile
-                <span className="material-symbols-outlined" style={{ fontSize: '1.1rem' }}>arrow_outward</span>
-              </a>
-            </div>
-          </div>
-        )}
+
 
         {/* Skills Grid */}
         <div className="skills-grid reveal" id="stack">

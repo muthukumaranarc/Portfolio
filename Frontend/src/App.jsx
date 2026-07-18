@@ -8,11 +8,12 @@ import Stats from './Components/Stats';
 import GithubProjects from './Components/GithubProjects';
 import DevOpsJourney from './Components/DevOpsJourney';
 import Accolades from './Components/Accolades';
-import Contact from './Components/Contact';
+// import Contact from './Components/Contact';
 import SiteFooter from './Components/SiteFooter';
 import MobileNav from './Components/MobileNav';
 import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
+import ContactSection from './Components/ContactSection';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -139,7 +140,7 @@ function App() {
       <GithubProjects />
       <DevOpsJourney />
       <Accolades />
-      <Contact />
+      <ContactSection />
       <SiteFooter />
       <MobileNav activeSection={activeSection} />
     </ClickSpark>
