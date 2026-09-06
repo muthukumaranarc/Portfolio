@@ -1,18 +1,18 @@
 <div align="center">
 
-# ✨ Muthukumaran's Portfolio
+# ✨ Muthukumaran's Full-Stack Portfolio
 
-### A modern, full-stack developer portfolio — designed to impress.
+### A modern, interactive, and high-performance developer portfolio built with **React 19**, **Spring Boot**, and **Vite**.
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-muthukumaran--portfolio.web.app-6C63FF?style=for-the-badge&labelColor=1a1a2e)](https://muthukumaran-portfolio.web.app/)
-[![Frontend](https://img.shields.io/badge/Frontend-React_19-61DAFB?style=for-the-badge&logo=react&logoColor=white&labelColor=1a1a2e)](https://react.dev/)
-[![Backend](https://img.shields.io/badge/Backend-Spring_Boot_3-6DB33F?style=for-the-badge&logo=springboot&logoColor=white&labelColor=1a1a2e)](https://spring.io/projects/spring-boot)
-[![Hosted on](https://img.shields.io/badge/Hosting-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white&labelColor=1a1a2e)](https://firebase.google.com/)
-[![Backend on](https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white&labelColor=1a1a2e)](https://render.com/)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-muthukumaran--portfolio.web.app-10b981?style=for-the-badge&labelColor=073827)](https://muthukumaran-portfolio.web.app/)
+[![Frontend](https://img.shields.io/badge/Frontend-React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black&labelColor=073827)](https://react.dev/)
+[![Build Tool](https://img.shields.io/badge/Bundler-Vite_6-646CFF?style=for-the-badge&logo=vite&logoColor=white&labelColor=073827)](https://vitejs.dev/)
+[![Backend](https://img.shields.io/badge/Backend-Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white&labelColor=073827)](https://spring.io/projects/spring-boot)
+[![Hosting](https://img.shields.io/badge/Hosting-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black&labelColor=073827)](https://firebase.google.com/)
 
 <br/>
 
-> _"I'm a computer science student with 9.8 CGPA. I actively engage in tech competitions and focus on building innovative solutions that solve real-world problems effectively."_
+> *"I am a Computer Science student and Full-Stack Developer passionate about architecting scalable web applications, solving real-world challenges in hackathons, and applying AI to practical engineering workflows."*
 
 <br/>
 
@@ -20,81 +20,166 @@
 
 ---
 
-## 📸 Overview
+## 📑 Table of Contents
 
-A **feature-rich, fully responsive** portfolio website that goes beyond a static resume. It integrates **real-time LeetCode statistics**, an **automated email feedback system**, **GSAP-powered animations**, and a **smooth typewriter intro** — all wrapped in a polished, modern UI.
-
-Built with **React 19 + Vite** on the frontend and **Spring Boot 3** on the backend, this portfolio is designed for performance, interactivity, and a premium user experience.
+- [Overview](#-overview)
+- [Meet Kutty — Interactive Portfolio Companion](#-meet-kutty--the-interactive-portfolio-companion)
+- [Key Features & Sections](#-key-features--sections)
+- [Repository Architecture](#-repository-architecture)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+- [Deployment](#-deployment)
+- [Connect with Me](#-connect-with-me)
 
 ---
 
-## 🏗️ Architecture
+## 📸 Overview
+
+This portfolio website is an interactive web experience engineered to showcase real-world full-stack projects, competitive hackathon prototypes, machine learning internships, and verified credentials.
+
+Unlike standard static portfolios, this site is **data-driven**, **content-reactive**, and introduces **Kutty** — an autonomous, interactive mascot companion that travels with the visitor and guides them through every section of the portfolio.
+
+---
+
+## 🦉 Meet "Kutty" — The Interactive Portfolio Companion
+
+One of the standout features of this portfolio is **Kutty**, a custom-animated owl companion who guides visitors across the entire site in real-time.
+
+```
+       ,___,
+       [O.o]   "Hi there! I'm Kutty, your tour guide.
+       /)__)    Let's explore Muthukumaran's portfolio together!"
+      --"-"--
+```
+
+### 🌟 Kutty's Features & Capabilities
+
+1. **Contextual Emotion Engine (14 Reactive States)**:
+   Kutty expresses dynamic personality using 14 handcrafted emotion states based on the viewer's current context:
+   - `hi` — Welcoming visitors at the Hero section.
+   - `cool` — Inspecting the React & Spring Boot tech stack.
+   - `inspired` — Sharing Muthu's philosophy in the About section.
+   - `code` — Highlighting production builds in the Projects section.
+   - `study` — Exploring the IBM SkillsBuild Machine Learning internship.
+   - `excited` — Hype and energy in the Hackathons section.
+   - `celebration` — Celebrating verified credentials in Certifications.
+   - `wink` — Encouraging connections in the Contact section.
+   - `love` — Expressing gratitude at the bottom of the portfolio.
+   - `sleepy` — Dozing off if the viewer goes idle for ~18 seconds.
+   - `surprised` — Waking up instantly when the viewer scrolls or moves the mouse!
+   - `happy`, `normal`, `sad` — Interactive emotional responses.
+
+2. **Interactive Guided Tour (Precision Smooth Scroll)**:
+   - Inside Kutty's speech bubble, the **`Next: [Section] ➔`** tour button acts as an automated, guided walkthrough.
+   - Clicking **`Next`** triggers smooth, mathematically calculated scrolling that offsets for the fixed navbar, ensuring every section title lands with exact 24px framing.
+
+3. **Pick & Place (Draggable Companion)**:
+   - Visitors can **click/touch Kutty and drag him anywhere** on their screen.
+   - Features responsive cursor feedback (`grab` & `grabbing`), lifted drop shadows, and automatic bounds clamping so Kutty never gets lost off-screen.
+
+4. **Frosted Glassmorphism Speech Bubble**:
+   - Designed with `backdrop-filter: blur(14px)` and translucent emerald styling.
+   - Features a clean **`×` close button** that silences the dialogue and displays **only the character** without distracting the reader.
+   - Tapping/clicking Kutty at any time pops open a new fun fact or dialogue.
+
+5. **Accompanies Every View**:
+   - Kutty even travels alongside the user into the dedicated **"What I Learned"** project analysis pages, offering commentary on debugging and architectural lessons!
+
+---
+
+## 🎯 Key Features & Sections
+
+### 1. Hero Section
+- Dynamic personal branding with live status pill: *"Open to Opportunities"*.
+- Floating technology badges (Figma, MongoDB, React, Node.js) with fluid CSS physics.
+- Quick action buttons with precision smooth scrolling (*"View Projects"*, *"Contact Me"*).
+
+### 2. My Skills
+- Categorized presentation of core languages, frameworks, and tools:
+  - **Frontend**: HTML5, CSS3, JavaScript, React.js.
+  - **Backend & Database**: Java, Spring Boot, Node.js, MongoDB, MySQL.
+  - **Tools & DevOps**: Git, GitHub, Maven, Figma, Docker.
+
+### 3. About Section (Bento Grid Overhaul)
+- **Interactive Bento Grid**: Highlighting full-stack craft, competitive hackathons, applied AI, and engineering philosophies with interactive micro-tags.
+- **2×2 Metrics Grid**: Quick glance statistics:
+  - **4+** Hackathons & Challenges (*SIH, GDG, SNS, MSME*)
+  - **6+** Production-Ready Builds (*Full-Stack Web Apps*)
+  - **3+** IBM Certifications (*AI, GenAI & Agents*)
+  - **1** AI / ML Internship (*IBM SkillsBuild*)
+
+### 4. GitHub Projects & Architecture Showcase
+- Live project cards integrated with GitHub metadata, repository links, and live demos.
+- Dedicated **"What I Learned"** modal drawer (`ProjectLearnings.jsx`) highlighting challenges, architectural decisions, and post-mortem takeaways for each build.
+
+### 5. Activities Suite
+- **Internships**: Features the 6-week Virtual **Machine Learning and Applied AI Internship** at **IBM SkillsBuild** in collaboration with **AICTE** and **BharatCares** (watsonx, intelligent agents, supervised/unsupervised ML).
+- **Hackathons**: Detailed timeline of competitive sprints:
+  - *Smart India Hackathon (SIH 2026)* — AI-driven solution ideation.
+  - *Chameleon (GDG × KSRCE)* — Multimodal AI machine troubleshooting.
+  - *SNS College 8-Hour Hackathon* — Accessibility navigation prototype.
+  - *MSME 6.0* — IT employment & skill-gap matching concept.
+- **Certifications**: Industry-recognized credentials verified by IBM SkillsBuild:
+  - *Artificial Intelligence Fundamentals*
+  - *Generative AI in Action*
+  - *Make Agentic AI Work for You*
+
+### 6. Contact & Social Channels
+- Direct interactive messaging form with real-time feedback states.
+- Direct communication channels via Email, LinkedIn, and WhatsApp.
+
+### 7. Modern Deep Forest Footer
+- Custom deep emerald card styling with ambient radial glow.
+- Quick navigation links, social channel buttons, smooth back-to-top button, and a special nod to Kutty the mascot.
+
+---
+
+## 🏗️ Repository Architecture
 
 ```
 Portfolio/
-├── 📂 Frount/                    # Frontend — React + Vite SPA
+├── Frontend/                          # React 19 + Vite Single Page Application
+│   ├── public/                        # Static assets (favicons, logos)
 │   ├── src/
-│   │   ├── App.jsx               # Main app with scroll-to-top & zoom lock
-│   │   ├── Components/
-│   │   │   ├── Head.jsx          # Navigation bar with smooth-scroll links
-│   │   │   ├── Profile.jsx       # Hero section with typewriter intro
-│   │   │   ├── TextType.jsx      # Custom GSAP-powered typewriter component
-│   │   │   ├── Skills.jsx        # Frontend / Backend / Tools skill grid
-│   │   │   ├── Journey.jsx       # Visual learning timeline
-│   │   │   ├── LeetCode.jsx      # Live LeetCode stats with circular progress
-│   │   │   ├── Visionary.jsx     # Career vision with scroll-reveal animations
-│   │   │   ├── Projects.jsx      # Featured project showcase
-│   │   │   ├── ProjectBlock.jsx  # Reusable project card component
-│   │   │   ├── Feedback.jsx      # Feedback form with star rating
-│   │   │   ├── Footer.jsx        # Contact links & social icons
-│   │   │   └── useScrollReveal.jsx  # Custom hook for scroll animations
-│   │   └── assets/               # Images, icons, and project screenshots
-│   ├── firebase.json             # Firebase Hosting configuration
-│   └── package.json
+│   │   ├── assets/                    # Media assets
+│   │   │   ├── Kutty/                 # 14 emotion illustrations of Kutty the Owl
+│   │   │   │   ├── hi.png, happy.png, cool.png, code.png, study.png, ...
+│   │   │   │   └── celebration.png, wink.png, sleepy.png, surprised.png
+│   │   │   ├── MuthuHero.webp         # Hero portrait
+│   │   │   └── ...                    # Tech stack logos & badge graphics
+│   │   ├── components/                # Modular React components with co-located CSS
+│   │   │   ├── Navbar.jsx             # Fixed blur navigation bar
+│   │   │   ├── Hero.jsx               # Hero landing section
+│   │   │   ├── KuttyCompanion.jsx     # Autonomous interactive owl guide
+│   │   │   ├── KuttyCompanion.css     # Kutty styling, animations & frosted glass
+│   │   │   ├── Skills.jsx             # Technical stack showcase
+│   │   │   ├── About.jsx              # Bento grid about section
+│   │   │   ├── GithubProjects.jsx     # Production project cards
+│   │   │   ├── ProjectLearnings.jsx   # "What I Learned" deep-dive page
+│   │   │   ├── Activities.jsx         # Internships, Hackathons & Certifications
+│   │   │   ├── Internships.jsx        # IBM SkillsBuild internship card
+│   │   │   ├── Hackathons.jsx         # SIH, GDG, SNS, MSME hackathon timeline
+│   │   │   ├── Certifications.jsx     # IBM SkillsBuild verified credentials
+│   │   │   ├── ContactSection.jsx     # Contact form and social cards
+│   │   │   ├── SiteFooter.jsx         # Deep emerald footer card
+│   │   │   └── MobileNav.jsx          # Mobile bottom navigation bar
+│   │   ├── data/                      # Data-driven JSON/JS sources
+│   │   │   ├── internships.js         # Internship records & company logos
+│   │   │   ├── hackathons.js          # Hackathon cards & poster assets
+│   │   │   ├── certifications.js      # Credentials & issuer logos
+│   │   │   └── projects/              # GitHub repos & learning post-mortems
+│   │   ├── styles/
+│   │   │   └── global.css             # Design tokens, variables & scroll anchors
+│   │   ├── utils/
+│   │   │   └── scrollUtils.js         # Precision smooth-scroll calculation engine
+│   │   ├── App.jsx                    # Root composition & section tracking
+│   │   └── main.jsx                   # Entry point
+│   ├── package.json                   # Dependencies & scripts
+│   └── vite.config.js                 # Vite build & chunking configuration
 │
-├── 📂 sendMail/                  # Backend — Spring Boot 3 API
-│   ├── src/main/java/com/muthu/sendMail/
-│   │   ├── Collections/
-│   │   │   └── MailController.java   # REST endpoints (/send, /leetcode)
-│   │   ├── Services/
-│   │   │   └── MainService.java      # Email service + LeetCode stats proxy
-│   │   ├── Configuration/
-│   │   │   └── CorsConfig.java       # CORS configuration
-│   │   └── Data/
-│   │       └── UserInput.java        # Feedback form DTO
-│   ├── Dockerfile                    # Docker image for Render deployment
-│   └── pom.xml
-│
-└── 📂 .github/workflows/        # CI/CD
-    ├── firebase-hosting-merge.yml       # Auto-deploy on push to main
-    └── firebase-hosting-pull-request.yml # Preview on PR
+├── Portfolio-backend/                 # Spring Boot backend service
+└── README.md                          # Repository documentation
 ```
-
----
-
-## ✨ Key Features
-
-### 🎨 Frontend Highlights
-
-| Feature                          | Description                                                                                                                                                                            |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **⌨️ Typewriter Intro**          | Custom-built GSAP-animated text component that cycles through roles — _Full Stack Developer, React Developer, Spring Boot Developer_ — with cursor blink and configurable typing speed |
-| **📊 Live LeetCode Stats**       | Real-time problem-solving statistics fetched from the backend API, displayed with animated circular progress bars (Easy / Medium / Hard breakdown)                                     |
-| **🌀 Scroll Reveal Animations**  | Custom `useScrollReveal` hook powered by `IntersectionObserver` triggers smooth entrance animations as sections come into view                                                         |
-| **⭐ Interactive Feedback Form** | Full contact form with star rating, real-time button states (_Submit → Processing → Submitted_), and automated email notifications via the Spring Boot backend                         |
-| **🧭 Smooth Navigation**         | Sticky header with hash-based smooth scrolling, plus a floating scroll-to-top button that appears after 600px scroll depth                                                             |
-| **📱 Fully Responsive**          | Adaptive layouts with dedicated mobile breakpoints, separate journey timeline images for mobile, and touch-optimized interactions                                                      |
-| **🎆 Particle Effects**          | Background particle animations using `react-tsparticles` for a dynamic, premium feel                                                                                                   |
-| **🔒 Zoom Lock**                 | Prevents accidental zoom via `Ctrl+Scroll`, pinch gestures, and keyboard shortcuts for a controlled viewing experience                                                                 |
-
-### ⚙️ Backend Highlights
-
-| Feature                   | Description                                                                                                                       |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **📧 Dual Email System**  | On feedback submission, sends a styled HTML notification to the portfolio owner AND a personalized thank-you email to the visitor |
-| **📈 LeetCode Proxy API** | `GET /leetcode` — proxies the LeetCode Stats API to avoid CORS issues and provides real-time problem-solving data                 |
-| **🐳 Dockerized**         | Production-ready `Dockerfile` for seamless deployment on Render                                                                   |
-| **🌐 CORS Configured**    | Proper cross-origin setup to allow requests from the Firebase-hosted frontend                                                     |
 
 ---
 
@@ -103,29 +188,18 @@ Portfolio/
 <div align="center">
 
 ### Frontend
-
 ![React](https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=black)
-![Styled Components](https://img.shields.io/badge/Styled_Components-DB7093?style=flat-square&logo=styled-components&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![tsParticles](https://img.shields.io/badge/tsParticles-000000?style=flat-square&logo=typescript&logoColor=white)
-![Canvas Confetti](https://img.shields.io/badge/Canvas_Confetti-FF6B6B?style=flat-square)
+![Vite](https://img.shields.io/badge/Vite_6-646CFF?style=flat-square&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript_ESNext-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/Modern_CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![React Markdown](https://img.shields.io/badge/React_Markdown-000000?style=flat-square)
 
-### Backend
-
-![Spring Boot](https://img.shields.io/badge/Spring_Boot_3.4-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![Java 17](https://img.shields.io/badge/Java_17-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white)
-![Spring Mail](https://img.shields.io/badge/Spring_Mail-6DB33F?style=flat-square&logo=spring&logoColor=white)
-
-### DevOps & Hosting
-
-![Firebase](https://img.shields.io/badge/Firebase_Hosting-FFCA28?style=flat-square&logo=firebase&logoColor=black)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=white)
+### Backend & Cloud
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![Java](https://img.shields.io/badge/Java_17-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase_Hosting-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 
 </div>
 
@@ -134,69 +208,43 @@ Portfolio/
 ## 🚀 Getting Started
 
 ### Prerequisites
+- **Node.js** (v18.0.0 or higher)
+- **npm** (v9.0.0 or higher)
 
-- **Node.js** ≥ 18 & **npm**
-- **Java 17** & **Maven**
-- **Docker** _(optional, for backend containerization)_
-
-### 1️⃣ Clone the repository
-
+### 1. Clone the repository
 ```bash
 git clone https://github.com/muthukumaranarc/Portfolio.git
-cd Portfolio
+cd Portfolio/Frontend
 ```
 
-### 2️⃣ Frontend Setup
-
+### 2. Install dependencies
 ```bash
-cd Frount
 npm install
+```
+
+### 3. Run the development server
+```bash
 npm run dev
 ```
+The site will be running locally at `http://localhost:5173`.
 
-> The development server starts at `http://localhost:5173` with hot module replacement enabled.
-
-### 3️⃣ Backend Setup
-
+### 4. Build for production
 ```bash
-cd sendMail
-
-# Configure email credentials in application.properties
-# spring.mail.username=your-email@gmail.com
-# spring.mail.password=your-app-password
-
-./mvnw spring-boot:run
+npm run build
 ```
 
-> The backend API starts at `http://localhost:8080`.
-
-### 4️⃣ Docker (Optional)
-
+### 5. Run linting
 ```bash
-cd sendMail
-./mvnw clean package -DskipTests
-docker build -t portfolio-backend .
-docker run -p 8080:8080 portfolio-backend
+npm run lint
 ```
 
 ---
 
 ## 🌐 Deployment
 
-| Layer        | Platform         | Config                                             |
-| ------------ | ---------------- | -------------------------------------------------- |
-| **Frontend** | Firebase Hosting | Auto-deployed via GitHub Actions on push to `main` |
-| **Backend**  | Render (Docker)  | Containerized with `openjdk:17-jdk-alpine`         |
-| **CI/CD**    | GitHub Actions   | Preview deploys on PRs, live deploy on merge       |
-
----
-
-## 📡 API Endpoints
-
-| Method | Endpoint    | Description                                              |
-| ------ | ----------- | -------------------------------------------------------- |
-| `POST` | `/send`     | Submit feedback form — triggers dual email notifications |
-| `GET`  | `/leetcode` | Fetch real-time LeetCode statistics                      |
+- **Hosting**: Deployed on **Firebase Hosting**.
+- **Build Distribution**: Configured via `firebase.json` pointing to `Frontend/dist`.
+- **Automated CI/CD**: Automatic previews on Pull Requests and live deployment on push to `main` via GitHub Actions.
 
 ---
 
@@ -204,21 +252,13 @@ docker run -p 8080:8080 portfolio-backend
 
 <div align="center">
 
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:muthukumaranarc00@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muthukumaranarc00)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/muthukumaranarc)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/Jq4H1BglTL/)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://api.whatsapp.com/send?phone=8610760407&text=Hi%20Muthukumaran)
-[![Portfolio](https://img.shields.io/badge/Portfolio-6C63FF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://muthukumaran-portfolio.web.app/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:muthukumaran.freelance@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/8610760407)
 
-</div>
+<br/>
 
----
-
-<div align="center">
-
-### ⭐ If you like this project, give it a star!
-
-Made with ❤️ by **Muthukumaran M**
+Designed & Developed with ❤️ by **Muthukumaran M** &bull; Guided by **Kutty** 🦉
 
 </div>

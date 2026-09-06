@@ -1,0 +1,123 @@
+.skills-section {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.skills-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #0b3c29;
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  --card-w: calc((100% - 112px) / 9);
+}
+
+.skills-card {
+  flex: 0 1 var(--card-w);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(11, 60, 41, 0.1);
+  border-radius: 12px;
+  padding: 20px 8px 16px;
+  box-shadow: 0 4px 16px rgba(11, 60, 41, 0.04);
+  text-align: center;
+}
+
+.skills-card-icon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.skills-card-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .skills-row {
+    --card-w: calc(20% - 14px);
+  }
+}
+
+@media (max-width: 700px) {
+  .skills-section {
+    padding: 4rem 0;
+  }
+
+  .skills-container {
+    padding: 0 1.25rem;
+  }
+
+  .skills-title {
+    margin-bottom: 2rem;
+  }
+
+  .skills-row {
+    --card-w: calc(25% - 14px);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 0 1rem;
+  }
+
+  .skills-row {
+    gap: 10px;
+    --card-w: calc(33.333% - 10px);
+  }
+
+  .skills-card {
+    padding: 14px 4px 10px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+
+  .skills-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .skills-card-label {
+    font-size: 0.62rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .skills-row {
+    --card-w: calc(50% - 10px);
+  }
+}

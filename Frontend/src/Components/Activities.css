@@ -1,0 +1,61 @@
+.activities-section {
+  padding: 6rem 0;
+  background: transparent;
+}
+
+.activities-container {
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.activities-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.activities-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #111827;
+  font-family: 'Manrope', sans-serif;
+  margin-bottom: 0.8rem;
+}
+
+.activities-subtitle {
+  color: #6b7280;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+/* Spacing + separators between the grouped sub-sections */
+.activities-section .internships-section,
+.activities-section .hackathons-section,
+.activities-section .certifications-section {
+  margin-top: 3.5rem;
+}
+
+.activities-section .hackathons-section,
+.activities-section .certifications-section {
+  padding-top: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .activities-section {
+    padding: 4.5rem 0;
+  }
+
+  .activities-section .internships-section,
+  .activities-section .hackathons-section,
+  .activities-section .certifications-section {
+    margin-top: 2.75rem;
+  }
+
+  .activities-section .hackathons-section,
+  .activities-section .certifications-section {
+    padding-top: 2.75rem;
+  }
+}

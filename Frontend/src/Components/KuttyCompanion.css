@@ -1,0 +1,357 @@
+/* ==========================================================================
+   Kutty Companion - Draggable Interactive Owl Guide
+   ========================================================================== */
+
+.kutty-companion-root {
+  position: fixed;
+  z-index: 55;
+  pointer-events: none;
+  user-select: none;
+  width: 105px;
+  touch-action: none;
+  transition:
+    left 0.4s cubic-bezier(0.22, 1.2, 0.36, 1),
+    top 0.4s cubic-bezier(0.22, 1.2, 0.36, 1),
+    right 0.4s cubic-bezier(0.22, 1.2, 0.36, 1),
+    bottom 0.4s cubic-bezier(0.22, 1.2, 0.36, 1),
+    opacity 0.35s ease;
+}
+
+/* Default position: Always in bottom-right area (including Hero) */
+.kutty-companion-root.kutty-default-pos {
+  right: 1.5rem;
+  bottom: 1.5rem;
+  left: auto;
+  top: auto;
+}
+
+/* On mobile, sit comfortably in the bottom-right corner */
+@media (max-width: 768px) {
+  .kutty-companion-root {
+    width: 78px;
+  }
+  .kutty-companion-root.kutty-default-pos {
+    right: 1rem;
+    bottom: 1.25rem;
+  }
+}
+
+/* While user is dragging Kutty: instant response, no transition lag */
+.kutty-companion-root.kutty-dragging {
+  transition: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Companion Body & Drag Interaction
+   -------------------------------------------------------------------------- */
+.kutty-character-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grab;
+  pointer-events: auto;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.kutty-dragging .kutty-character-wrapper {
+  cursor: grabbing !important;
+  transform: scale(1.12) translateY(-4px);
+}
+
+/* Gentle floating bob when resting */
+.kutty-companion-root:not(.kutty-dragging) .kutty-character-wrapper {
+  animation: kutty-bob 3.2s ease-in-out infinite;
+}
+
+@keyframes kutty-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Click/Poke Jump */
+.kutty-character-wrapper.kutty-poked {
+  animation: kutty-jump 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes kutty-jump {
+  0% { transform: scale(1) translateY(0); }
+  35% { transform: scale(1.18, 0.85) translateY(-14px); }
+  65% { transform: scale(0.92, 1.12) translateY(2px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+.kutty-owl-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kutty-owl-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(3, 67, 52, 0.18));
+  pointer-events: none;
+  user-select: none;
+  transition: transform 0.25s ease, filter 0.25s ease, opacity 0.15s ease;
+}
+
+/* Active emotion is in normal document flow to size wrapper and shadow */
+.kutty-owl-img.kutty-owl-active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  display: block;
+}
+
+/* All other preloaded emotion images stay in DOM cache and ready instantly */
+.kutty-owl-img.kutty-owl-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.kutty-character-wrapper:hover:not(:active) .kutty-owl-img.kutty-owl-active {
+  transform: scale(1.05);
+  filter: drop-shadow(0 12px 24px rgba(3, 67, 52, 0.25));
+}
+
+/* Soft shadow below Kutty */
+.kutty-shadow {
+  width: 58%;
+  height: 8px;
+  background: radial-gradient(ellipse at center, rgba(3, 67, 52, 0.24) 0%, rgba(3, 67, 52, 0) 72%);
+  border-radius: 50%;
+  margin-top: -2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.kutty-dragging .kutty-shadow {
+  transform: scale(0.65);
+  opacity: 0.2;
+}
+
+.kutty-companion-root:not(.kutty-dragging) .kutty-shadow {
+  animation: kutty-shadow-pulse 3.2s ease-in-out infinite;
+}
+
+@keyframes kutty-shadow-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(0.75);
+    opacity: 0.25;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Speech Bubble with Glassmorphism / Frosted Background Blur
+   -------------------------------------------------------------------------- */
+.kutty-speech-bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px) saturate(170%);
+  -webkit-backdrop-filter: blur(14px) saturate(170%);
+  border-radius: 20px;
+  padding: 0.85rem 1rem;
+  box-shadow:
+    0 16px 36px rgba(3, 67, 52, 0.16),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  font-family: 'Manrope', sans-serif;
+  color: #1f2937;
+  pointer-events: auto;
+  z-index: 60;
+  width: min(280px, calc(100vw - 2.5rem));
+  box-sizing: border-box;
+  transition:
+    opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Bubble placed above Kutty (default) */
+.kutty-bubble-above {
+  bottom: 108%;
+  transform: translateY(-4px);
+}
+
+/* Bubble placed below Kutty if dragged close to top of screen */
+.kutty-bubble-below {
+  top: 108%;
+  transform: translateY(4px);
+}
+
+/* Bubble anchored to right of Kutty (tail on right) */
+.kutty-bubble-anchor-right {
+  right: 0.5rem;
+  left: auto;
+  transform-origin: bottom right;
+}
+
+.kutty-bubble-anchor-right::after {
+  content: '';
+  position: absolute;
+  right: 28px;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  transform: rotate(45deg);
+}
+
+.kutty-bubble-above.kutty-bubble-anchor-right::after {
+  bottom: -6px;
+  border-right: 1px solid rgba(3, 67, 52, 0.08);
+  border-bottom: 1px solid rgba(3, 67, 52, 0.08);
+}
+
+.kutty-bubble-below.kutty-bubble-anchor-right::after {
+  top: -6px;
+  border-left: 1px solid rgba(3, 67, 52, 0.08);
+  border-top: 1px solid rgba(3, 67, 52, 0.08);
+}
+
+/* Bubble anchored to left of Kutty (tail on left) */
+.kutty-bubble-anchor-left {
+  left: 0.5rem;
+  right: auto;
+  transform-origin: bottom left;
+}
+
+.kutty-bubble-anchor-left::after {
+  content: '';
+  position: absolute;
+  left: 28px;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  transform: rotate(45deg);
+}
+
+.kutty-bubble-above.kutty-bubble-anchor-left::after {
+  bottom: -6px;
+  border-left: 1px solid rgba(3, 67, 52, 0.08);
+  border-bottom: 1px solid rgba(3, 67, 52, 0.08);
+}
+
+.kutty-bubble-below.kutty-bubble-anchor-left::after {
+  top: -6px;
+  border-right: 1px solid rgba(3, 67, 52, 0.08);
+  border-top: 1px solid rgba(3, 67, 52, 0.08);
+}
+
+/* Hidden bubble state */
+.kutty-speech-bubble.kutty-bubble-hidden {
+  opacity: 0;
+  transform: scale(0.85) translateY(8px);
+  pointer-events: none;
+}
+
+/* Bubble Header */
+.kutty-bubble-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(3, 67, 52, 0.08);
+}
+
+.kutty-bubble-title {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #075034;
+}
+
+.kutty-bubble-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.kutty-bubble-close:hover {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Bubble Content */
+.kutty-bubble-text {
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #111827;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+/* Bubble Action Row */
+.kutty-bubble-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(3, 67, 52, 0.06);
+  gap: 0.4rem;
+}
+
+.kutty-drag-hint {
+  font-size: 0.68rem;
+  color: #6b7280;
+  font-style: italic;
+  white-space: nowrap;
+  flex: 1 1 auto;
+}
+
+.kutty-tour-btn {
+  background: #075034;
+  border: 1px solid #075034;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 2px 8px rgba(7, 80, 52, 0.25);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.kutty-tour-btn:hover {
+  background: #0a6945;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(7, 80, 52, 0.35);
+}

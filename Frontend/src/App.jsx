@@ -1,67 +1,28 @@
-import './App.css';
-import ClickSpark from './Components/ClickSpark';
-import Navbar from './Components/Navbar';
-import Hero from './Components/Hero';
-import About from './Components/About';
-import Expertise from './Components/Expertise';
-import Stats from './Components/Stats';
-import GithubProjects from './Components/GithubProjects';
-import DevOpsJourney from './Components/DevOpsJourney';
-import Accolades from './Components/Accolades';
-// import Contact from './Components/Contact';
-import SiteFooter from './Components/SiteFooter';
-import MobileNav from './Components/MobileNav';
-import { useEffect, useState } from 'react';
-import Lenis from 'lenis';
-import ContactSection from './Components/ContactSection';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import './styles/global.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Skills from './components/Skills';
+import About from './components/About';
+import ProjectLearnings from './components/ProjectLearnings';
+import KuttyCompanion from './components/KuttyCompanion';
+
+// Below-the-fold sections are code-split and loaded on demand to keep the
+// initial bundle small (GithubProjects pulls in react-markdown + remark-gfm).
+const GithubProjects = lazy(() => import('./components/GithubProjects'));
+const Activities = lazy(() => import('./components/Activities'));
+const ContactSection = lazy(() => import('./components/ContactSection'));
+const SiteFooter = lazy(() => import('./components/SiteFooter'));
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [learningProject, setLearningProject] = useState(null);
 
+  // Track the section currently in view for navigation state. Sections are
+  // code-split and mount lazily, so also observe elements added to the DOM
+  // after this effect first runs (MutationObserver).
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
-      infinite: false
-    });
-
-    let rafId;
-
-    function raf(time) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
-
-    rafId = requestAnimationFrame(raf);
-
-    // Smooth scroll for anchor links
-    const handleAnchorClick = (e) => {
-      const anchor = e.target.closest('a[href^="#"]');
-      if (anchor) {
-        const targetId = anchor.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          lenis.scrollTo(targetElement, { offset: -100 });
-        }
-      }
-    };
-
-    document.addEventListener('click', handleAnchorClick);
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      document.removeEventListener('click', handleAnchorClick);
-      lenis.destroy();
-    };
-  }, []);
-
-  // IntersectionObserver for tracking active section
-  useEffect(() => {
-    const sectionIds = ['hero', 'stack', 'about', 'projects', 'journey', 'contact'];
+    const sectionIds = ['hero', 'about', 'projects', 'activities', 'contact'];
     const observerOptions = {
       root: null,
       rootMargin: '-40% 0px -50% 0px',
@@ -76,74 +37,66 @@ function App() {
       });
     }, observerOptions);
 
-    sectionIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    // Scroll reveal observer
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+    const observeSections = () => {
+      sectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    observeSections();
+    const domObserver = new MutationObserver(observeSections);
+    domObserver.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       observer.disconnect();
+      domObserver.disconnect();
     };
   }, []);
 
-  // Re-observe new .reveal elements after render
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  // Open / close the dedicated "What I Learned" page for a project.
+  const openLearnings = (project) => {
+    setLearningProject(project);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  };
 
-      document.querySelectorAll('.reveal:not(.active)').forEach(el => observer.observe(el));
-    }, 100);
-    return () => clearTimeout(timeout);
-  });
+  const closeLearnings = () => {
+    setLearningProject(null);
+    // Wait for the projects section to remount before scrolling to it.
+    setTimeout(() => {
+      document.getElementById('projects')?.scrollIntoView({ block: 'start' });
+    }, 50);
+  };
+
+  if (learningProject) {
+    return (
+      <>
+        <ProjectLearnings project={learningProject} onBack={closeLearnings} />
+        <KuttyCompanion learningProject={learningProject} />
+      </>
+    );
+  }
 
   return (
-    <ClickSpark
-      sparkColor="var(--primary)"
-      sparkSize={12}
-      sparkRadius={18}
-      sparkCount={8}
-      duration={420}
-      easing="ease-out"
-      extraScale={1.15}
-    >
+    <>
       <Navbar activeSection={activeSection} />
       <Hero />
-      <Stats />
+      <Skills />
       <About />
-      <Expertise />
-      <GithubProjects />
-      <DevOpsJourney />
-      <Accolades />
-      <ContactSection />
-      <SiteFooter />
-      <MobileNav activeSection={activeSection} />
-    </ClickSpark>
+      <Suspense fallback={null}>
+        <GithubProjects onOpenLearnings={openLearnings} />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Activities />
+      </Suspense>
+      <Suspense fallback={null}>
+        <ContactSection />
+      </Suspense>
+      <Suspense fallback={null}>
+        <SiteFooter />
+      </Suspense>
+      <KuttyCompanion learningProject={learningProject} />
+    </>
   );
 }
 
