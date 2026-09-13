@@ -1,4 +1,4 @@
-import{j as x,r as ye,G as en,a as gt,P as yt,c as Ci,s as nn,p as Ei,F as tn,g as bt}from"./index-C8iw7tOa.js";import{g as cr}from"./react-vendor-COd4auuD.js";const Ai=`# Chameleon
+import{j as x,r as ye,G as en,a as gt,P as yt,c as Ci,s as nn,p as Ei,F as tn,g as bt}from"./index-BTaJ_Q9I.js";import{g as cr}from"./react-vendor-COd4auuD.js";const Ai=`# Chameleon
 An AI-powered adaptive workspace that lets users create and transform custom applications simply by describing what they need in natural language.
 `,Ti=`# EduPlus 🚀
 
@@ -211,7 +211,7 @@ The repository is structured as a production-grade multi-module project:
 
 * **Client Demos:** Showcasing full-stack capabilities to prospective freelance clients.
 * **Architectural Blueprint:** Reusable starting template for commercial freelance contracts.
-* **Production Delivery:** Real-world demonstration of modern web engineering standards.\r
+* **Production Delivery:** Real-world demonstration of modern web engineering standards.
 `,Ii=`<div align="center">
 
 # ✨ Muthukumaran's Portfolio
